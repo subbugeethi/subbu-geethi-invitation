@@ -118,9 +118,9 @@
     .hero-date { margin-top: 13px; }
 
     /*
-      HAND-PAINTED FLORAL BORDER
-      One continuous botanical frame replaces all separate corner flowers.
-      The artwork stays close to the edge and away from the text.
+      ORGANIC FLORAL CORNERS
+      Four loose botanical arrangements.
+      No square frame and no repetitive border vines.
     */
 
     .floral-frame {
@@ -130,46 +130,48 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      overflow: visible;
-    }
-
-    .frame-line {
-      fill: none;
-      stroke: var(--gold);
-      stroke-width: .8;
-      opacity: .65;
+      overflow: hidden;
+      opacity: .9;
     }
 
     .vine {
       fill: none;
       stroke: #8eae95;
-      stroke-width: 1.15;
+      stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    .vine-leaf {
+    .leaf {
       fill: #c8dcc8;
       stroke: #8eae95;
-      stroke-width: .65;
+      stroke-width: 1;
+      stroke-linejoin: round;
     }
 
-    .flower-pink {
+    .leaf-vein {
+      fill: none;
+      stroke: #8eae95;
+      stroke-width: .7;
+      stroke-linecap: round;
+    }
+
+    .petal-pink {
       fill: #f0cbd5;
       stroke: #dba6b5;
-      stroke-width: .65;
+      stroke-width: .8;
     }
 
-    .flower-blue {
+    .petal-blue {
       fill: #c9e0eb;
       stroke: #9ebfd0;
-      stroke-width: .65;
+      stroke-width: .8;
     }
 
-    .flower-cream {
+    .petal-cream {
       fill: #fff1dc;
       stroke: #d7bd93;
-      stroke-width: .65;
+      stroke-width: .7;
     }
 
     .flower-dot { fill: #d0b17d; }
@@ -514,9 +516,7 @@
       }
 
       .subtitle { margin-top: 18px; }
-
       .hero-date { margin-top: 11px; }
-
       .scroll-cue { margin-top: 14px; }
 
       section { padding: 68px 21px; }
@@ -542,6 +542,8 @@
       }
 
       .closing { padding: 68px 22px; }
+
+      .floral-frame { opacity: .72; }
     }
 
     @media (max-height: 680px) and (min-width: 601px) {
@@ -583,108 +585,116 @@
 
   <header class="hero" id="home">
 
-    <!-- Continuous hand-painted botanical frame: no separate corner bouquets -->
-    <svg class="floral-frame" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+    <!-- Organic botanical corner decorations: no square border -->
+    <svg class="floral-frame" viewBox="0 0 1200 800"
+         preserveAspectRatio="none" aria-hidden="true">
       <defs>
-        <g id="tinyPinkFlower">
-          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5"/>
-          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5" transform="rotate(72)"/>
-          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5" transform="rotate(144)"/>
-          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5" transform="rotate(216)"/>
-          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5" transform="rotate(288)"/>
-          <circle class="flower-dot" r="1.8"/>
+        <g id="leaf">
+          <path class="leaf"
+            d="M0 0 C-20 -19 -31 -13 -30 -3 C-20 7 -9 6 0 0Z"/>
+          <path class="leaf-vein" d="M0 0 L-25 -5"/>
         </g>
 
-        <g id="tinyBlueFlower">
-          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5"/>
-          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5" transform="rotate(72)"/>
-          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5" transform="rotate(144)"/>
-          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5" transform="rotate(216)"/>
-          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5" transform="rotate(288)"/>
-          <circle class="flower-dot" r="1.5"/>
+        <g id="pinkBloom">
+          <ellipse class="petal-pink" cy="-15" rx="10" ry="17"/>
+          <ellipse class="petal-pink" cy="-15" rx="10" ry="17" transform="rotate(45)"/>
+          <ellipse class="petal-pink" cy="-15" rx="10" ry="17" transform="rotate(90)"/>
+          <ellipse class="petal-pink" cy="-15" rx="10" ry="17" transform="rotate(135)"/>
+          <ellipse class="petal-pink" cy="-15" rx="10" ry="17" transform="rotate(180)"/>
+          <ellipse class="petal-pink" cy="-15" rx="10" ry="17" transform="rotate(225)"/>
+          <ellipse class="petal-pink" cy="-15" rx="10" ry="17" transform="rotate(270)"/>
+          <ellipse class="petal-pink" cy="-15" rx="10" ry="17" transform="rotate(315)"/>
+          <circle class="flower-dot" r="7"/>
+          <circle class="petal-cream" r="3"/>
+        </g>
+
+        <g id="blueBloom">
+          <ellipse class="petal-blue" cy="-12" rx="8" ry="14"/>
+          <ellipse class="petal-blue" cy="-12" rx="8" ry="14" transform="rotate(60)"/>
+          <ellipse class="petal-blue" cy="-12" rx="8" ry="14" transform="rotate(120)"/>
+          <ellipse class="petal-blue" cy="-12" rx="8" ry="14" transform="rotate(180)"/>
+          <ellipse class="petal-blue" cy="-12" rx="8" ry="14" transform="rotate(240)"/>
+          <ellipse class="petal-blue" cy="-12" rx="8" ry="14" transform="rotate(300)"/>
+          <circle class="flower-dot" r="5"/>
+        </g>
+
+        <g id="smallBloom">
+          <ellipse class="petal-pink" cy="-6" rx="4" ry="7"/>
+          <ellipse class="petal-pink" cy="-6" rx="4" ry="7" transform="rotate(72)"/>
+          <ellipse class="petal-pink" cy="-6" rx="4" ry="7" transform="rotate(144)"/>
+          <ellipse class="petal-pink" cy="-6" rx="4" ry="7" transform="rotate(216)"/>
+          <ellipse class="petal-pink" cy="-6" rx="4" ry="7" transform="rotate(288)"/>
+          <circle class="flower-dot" r="2.5"/>
+        </g>
+
+        <g id="botanicalSpray">
+          <path class="vine"
+            d="M0 0 C28 45 20 80 54 111
+               S72 166 99 192 S116 230 137 251"/>
+          <path class="vine" d="M27 47 C-1 35 -13 17 -8 3"/>
+          <path class="vine" d="M43 83 C70 66 77 47 68 32"/>
+          <path class="vine" d="M65 126 C35 113 24 96 29 81"/>
+          <path class="vine" d="M89 171 C113 151 120 135 112 120"/>
+          <path class="vine" d="M112 216 C89 206 81 190 87 177"/>
+          <path class="vine" d="M15 27 C39 19 47 4 42 -10"/>
         </g>
       </defs>
 
-      <!-- Fine gold inner frame -->
-      <path class="frame-line" d="M24 800 V150 Q24 24 150 24 H1050 Q1176 24 1176 150 V800"/>
+      <!-- Upper-left floral spray -->
+      <g transform="translate(5 5) rotate(-5 100 100)">
+        <use href="#botanicalSpray" transform="scale(1.08)"/>
+        <use href="#leaf" transform="translate(18 26) rotate(15) scale(1.1)"/>
+        <use href="#leaf" transform="translate(44 65) rotate(195)"/>
+        <use href="#leaf" transform="translate(61 99) rotate(15) scale(1.1)"/>
+        <use href="#leaf" transform="translate(85 143) rotate(195) scale(1.05)"/>
+        <use href="#leaf" transform="translate(107 182) rotate(20)"/>
+        <use href="#leaf" transform="translate(29 50) rotate(205)"/>
+        <use href="#leaf" transform="translate(77 118) rotate(205)"/>
+        <use href="#pinkBloom" transform="translate(71 47) scale(1.45)"/>
+        <use href="#blueBloom" transform="translate(31 105) scale(1.15)"/>
+        <use href="#pinkBloom" transform="translate(111 151) scale(.92)"/>
+        <use href="#smallBloom" transform="translate(145 208) scale(1.1)"/>
+      </g>
 
-      <!-- Top border vine -->
-      <path class="vine" d="M42 43 C160 28 225 55 320 41 S480 31 590 43 S780 54 890 40 S1040 30 1158 44"/>
+      <!-- Upper-right floral spray -->
+      <g transform="translate(1195 0) scale(-1 1) rotate(-3 100 100)">
+        <use href="#botanicalSpray" transform="scale(1.12)"/>
+        <use href="#leaf" transform="translate(18 26) rotate(15) scale(1.1)"/>
+        <use href="#leaf" transform="translate(44 65) rotate(195)"/>
+        <use href="#leaf" transform="translate(61 99) rotate(15) scale(1.1)"/>
+        <use href="#leaf" transform="translate(85 143) rotate(195) scale(1.05)"/>
+        <use href="#leaf" transform="translate(107 182) rotate(20)"/>
+        <use href="#leaf" transform="translate(29 50) rotate(205)"/>
+        <use href="#leaf" transform="translate(77 118) rotate(205)"/>
+        <use href="#blueBloom" transform="translate(65 49) scale(1.35)"/>
+        <use href="#pinkBloom" transform="translate(28 112) scale(1.12)"/>
+        <use href="#pinkBloom" transform="translate(113 157) scale(.95)"/>
+        <use href="#smallBloom" transform="translate(145 208) scale(1.1)"/>
+      </g>
 
-      <path class="vine" d="M105 38 q-12 -14 -24 -10 q7 15 24 10
-                            M177 42 q10 -15 24 -10 q-7 15 -24 10
-                            M274 43 q-11 -14 -22 -9 q6 14 22 9
-                            M366 38 q10 -14 21 -9 q-6 14 -21 9
-                            M461 39 q-11 -13 -22 -8 q6 13 22 8
-                            M551 42 q10 -14 21 -9 q-6 14 -21 9
-                            M650 43 q-11 -14 -22 -9 q6 14 22 9
-                            M747 43 q10 -14 21 -9 q-6 14 -21 9
-                            M846 40 q-11 -14 -22 -9 q6 14 22 9
-                            M943 39 q10 -14 21 -9 q-6 14 -21 9
-                            M1040 40 q-11 -14 -22 -9 q6 14 22 9
-                            M1112 43 q10 -14 21 -9 q-6 14 -21 9"/>
+      <!-- Lower-left floral spray -->
+      <g transform="translate(0 800) scale(1 -1) rotate(-2 80 80)">
+        <use href="#botanicalSpray" transform="scale(.92)"/>
+        <use href="#leaf" transform="translate(18 26) rotate(15)"/>
+        <use href="#leaf" transform="translate(44 65) rotate(195)"/>
+        <use href="#leaf" transform="translate(61 99) rotate(15)"/>
+        <use href="#leaf" transform="translate(85 143) rotate(195)"/>
+        <use href="#pinkBloom" transform="translate(62 44) scale(1.2)"/>
+        <use href="#blueBloom" transform="translate(112 111) scale(1.05)"/>
+        <use href="#smallBloom" transform="translate(35 143) scale(1.2)"/>
+      </g>
 
-      <use href="#tinyPinkFlower" x="135" y="38"/>
-      <use href="#tinyBlueFlower" x="321" y="41"/>
-      <use href="#tinyPinkFlower" x="505" y="39"/>
-      <use href="#tinyBlueFlower" x="700" y="43"/>
-      <use href="#tinyPinkFlower" x="890" y="40"/>
-      <use href="#tinyBlueFlower" x="1070" y="39"/>
-
-      <!-- Left border: thin, wandering vine -->
-      <path class="vine" d="M31 75 C42 160 22 215 35 292 S43 425 31 500 S24 650 39 745"/>
-
-      <path class="vine" d="M33 135 q18 -9 18 -25 q-17 4 -18 25
-                            M30 214 q-16 -9 -16 -25 q16 4 16 25
-                            M35 303 q18 -10 18 -26 q-17 4 -18 26
-                            M36 395 q-16 -9 -16 -25 q16 4 16 25
-                            M31 495 q18 -10 18 -26 q-17 4 -18 26
-                            M29 590 q-16 -9 -16 -25 q16 4 16 25
-                            M35 683 q18 -10 18 -26 q-17 4 -18 26"/>
-
-      <use href="#tinyPinkFlower" x="34" y="174"/>
-      <use href="#tinyBlueFlower" x="31" y="352"/>
-      <use href="#tinyPinkFlower" x="32" y="548"/>
-      <use href="#tinyBlueFlower" x="35" y="722"/>
-
-      <!-- Right border -->
-      <path class="vine" d="M1169 75 C1158 160 1178 215 1165 292 S1157 425 1169 500 S1176 650 1161 745"/>
-
-      <path class="vine" d="M1167 135 q-18 -9 -18 -25 q17 4 18 25
-                            M1170 214 q16 -9 16 -25 q-16 4 -16 25
-                            M1165 303 q-18 -10 -18 -26 q17 4 18 26
-                            M1164 395 q16 -9 16 -25 q-16 4 -16 25
-                            M1169 495 q-18 -10 -18 -26 q17 4 18 26
-                            M1171 590 q16 -9 16 -25 q-16 4 -16 25
-                            M1165 683 q-18 -10 -18 -26 q17 4 18 26"/>
-
-      <use href="#tinyBlueFlower" x="1166" y="174"/>
-      <use href="#tinyPinkFlower" x="1169" y="352"/>
-      <use href="#tinyBlueFlower" x="1168" y="548"/>
-      <use href="#tinyPinkFlower" x="1165" y="722"/>
-
-      <!-- Bottom border -->
-      <path class="vine" d="M42 757 C160 772 225 745 320 759 S480 769 590 757 S780 746 890 760 S1040 770 1158 756"/>
-
-      <path class="vine" d="M105 762 q-12 14 -24 10 q7 -15 24 -10
-                            M177 758 q10 15 24 10 q-7 -15 -24 -10
-                            M274 757 q-11 14 -22 9 q6 -14 22 -9
-                            M366 762 q10 14 21 9 q-6 -14 -21 -9
-                            M461 761 q-11 13 -22 8 q6 -13 22 -8
-                            M551 758 q10 14 21 9 q-6 -14 -21 -9
-                            M650 757 q-11 14 -22 9 q6 -14 22 -9
-                            M747 757 q10 14 21 9 q-6 -14 -21 -9
-                            M846 760 q-11 14 -22 9 q6 -14 22 -9
-                            M943 761 q10 14 21 9 q-6 -14 -21 -9
-                            M1040 760 q-11 14 -22 9 q6 -14 22 -9
-                            M1112 757 q10 14 21 9 q-6 -14 -21 -9"/>
-
-      <use href="#tinyBlueFlower" x="135" y="762"/>
-      <use href="#tinyPinkFlower" x="321" y="759"/>
-      <use href="#tinyBlueFlower" x="505" y="761"/>
-      <use href="#tinyPinkFlower" x="700" y="757"/>
-      <use href="#tinyBlueFlower" x="890" y="760"/>
-      <use href="#tinyPinkFlower" x="1070" y="761"/>
+      <!-- Lower-right floral spray -->
+      <g transform="translate(1200 800) scale(-1 -1) rotate(-2 80 80)">
+        <use href="#botanicalSpray" transform="scale(.88)"/>
+        <use href="#leaf" transform="translate(18 26) rotate(15)"/>
+        <use href="#leaf" transform="translate(44 65) rotate(195)"/>
+        <use href="#leaf" transform="translate(61 99) rotate(15)"/>
+        <use href="#leaf" transform="translate(85 143) rotate(195)"/>
+        <use href="#blueBloom" transform="translate(62 44) scale(1.2)"/>
+        <use href="#pinkBloom" transform="translate(112 111) scale(1.05)"/>
+        <use href="#smallBloom" transform="translate(35 143) scale(1.2)"/>
+      </g>
     </svg>
 
     <div class="hero-content">
@@ -700,12 +710,12 @@
 
       <svg class="hero-flower" viewBox="0 0 60 60" aria-hidden="true">
         <g transform="translate(30 30)">
-          <ellipse class="flower-pink" cy="-12" rx="7" ry="12"/>
-          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
-          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
-          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
-          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
-          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
+          <ellipse class="petal-pink" cy="-12" rx="7" ry="12"/>
+          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
+          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
+          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
+          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
+          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
           <circle class="flower-dot" r="4"/>
         </g>
       </svg>
@@ -763,12 +773,12 @@
 
         <svg class="venue-flower" viewBox="0 0 60 60" aria-hidden="true">
           <g transform="translate(30 30)">
-            <ellipse class="flower-blue" cy="-12" rx="7" ry="12"/>
-            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
-            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
-            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
-            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
-            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
+            <ellipse class="petal-blue" cy="-12" rx="7" ry="12"/>
+            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
+            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
+            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
+            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
+            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
             <circle class="flower-dot" r="4"/>
           </g>
         </svg>
@@ -793,12 +803,12 @@
 
         <svg class="closing-flower" viewBox="0 0 60 60" aria-hidden="true">
           <g transform="translate(30 30)">
-            <ellipse class="flower-pink" cy="-12" rx="7" ry="12"/>
-            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
-            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
-            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
-            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
-            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
+            <ellipse class="petal-pink" cy="-12" rx="7" ry="12"/>
+            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
+            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
+            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
+            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
+            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
             <circle class="flower-dot" r="4"/>
           </g>
         </svg>
