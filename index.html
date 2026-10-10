@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fff5f6">
-  <meta name="description" content="Join Geethika and Subramanian for their wedding reception on 21 November 2026 in Pollachi.">
+  <meta name="description" content="Wedding reception of Geethika and Subramanian on 21 November 2026 in Pollachi.">
   <title>Geethika &amp; Subramanian | Wedding Reception</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,12 +15,10 @@
   <style>
     :root {
       --pink: #e9b5c4;
-      --pink-deep: #b96e83;
-      --pink-light: #fff0f3;
-      --green: #9dbba2;
-      --green-deep: #587963;
+      --pink-dark: #b96e83;
+      --green: #91ad96;
+      --green-dark: #587963;
       --blue: #b9d7e7;
-      --blue-deep: #668ba2;
       --cream: #fffaf6;
       --ink: #65545a;
       --muted: #82777a;
@@ -39,8 +37,8 @@
     body {
       margin: 0;
       overflow-x: hidden;
-      background: var(--cream);
       color: var(--ink);
+      background: var(--cream);
       font-family: var(--serif);
     }
 
@@ -53,64 +51,53 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 85px 25px 42px;
+      justify-content: center;
+      padding: 85px 25px 35px;
       text-align: center;
       background:
-        radial-gradient(ellipse at 5% 15%, rgba(233,181,196,.42), transparent 35%),
-        radial-gradient(ellipse at 95% 18%, rgba(185,215,231,.43), transparent 36%),
-        radial-gradient(ellipse at 50% 100%, rgba(157,187,162,.3), transparent 43%),
+        radial-gradient(ellipse at 5% 15%, rgba(233,181,196,.38), transparent 36%),
+        radial-gradient(ellipse at 95% 18%, rgba(185,215,231,.42), transparent 38%),
+        radial-gradient(ellipse at 50% 100%, rgba(157,187,162,.28), transparent 45%),
         linear-gradient(135deg, #fff1f4, #fffaf7 48%, #eff6f1);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(200,173,131,.58);
-      border-radius: 165px 165px 12px 12px;
-      pointer-events: none;
-      z-index: 0;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       width: min(720px, 100%);
-      animation: enter 1.1s ease both;
+      animation: fadeUp 1.1s ease both;
     }
 
     .eyebrow {
+      color: var(--green-dark);
       font: 10px/1.9 var(--sans);
       letter-spacing: .24em;
       text-transform: uppercase;
-      color: var(--green-deep);
     }
 
     h1 {
       margin: 30px 0 20px;
+      color: #68565c;
       font-size: clamp(51px, 9vw, 96px);
       font-weight: 400;
-      line-height: .91;
+      line-height: .94;
       letter-spacing: -.045em;
-      color: #68565c;
     }
 
     .name {
       display: inline-block;
-      animation: nameEnter 1.1s both;
+      animation: fadeUp 1s both;
     }
 
     .name.second { animation-delay: .2s; }
 
     .ampersand {
       display: inline-block;
-      margin: 12px 0;
-      color: var(--pink-deep);
+      margin: 10px 0;
+      color: var(--pink-dark);
       font-size: .76em;
       font-style: italic;
-      animation: gentleFloat 4s ease-in-out infinite;
     }
 
     .subtitle {
@@ -121,91 +108,71 @@
     }
 
     .hero-flower {
-      width: 37px;
-      height: 37px;
       display: block;
-      margin: 15px auto 0;
-      animation: gentleFloat 5s ease-in-out infinite;
+      width: 34px;
+      height: 34px;
+      margin: 16px auto 0;
+      animation: flowerFloat 4s ease-in-out infinite;
     }
 
-    .hero-date {
-      margin-top: 13px;
-    }
+    .hero-date { margin-top: 13px; }
 
-    /* NEW FLORAL CORNERS
-       Slim curved branches, separated leaves and small blossoms.
-       All flowers stay close to the corner rather than crowding it. */
+    /*
+      HAND-PAINTED FLORAL BORDER
+      One continuous botanical frame replaces all separate corner flowers.
+      The artwork stays close to the edge and away from the text.
+    */
 
-    .corner-floral {
+    .floral-frame {
       position: absolute;
       z-index: 1;
-      width: clamp(105px, 15vw, 170px);
-      height: auto;
-      overflow: visible;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
-      opacity: .9;
-      animation: floralAppear 1.4s .2s both;
+      overflow: visible;
     }
 
-    .corner-floral.top-left {
-      top: 18px;
-      left: 18px;
+    .frame-line {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: .8;
+      opacity: .65;
     }
 
-    .corner-floral.top-right {
-      top: 18px;
-      right: 18px;
-      transform: scaleX(-1);
-      animation-delay: .35s;
-    }
-
-    .corner-floral.bottom-left {
-      bottom: 18px;
-      left: 18px;
-      transform: scaleY(-1);
-      animation-delay: .45s;
-    }
-
-    .corner-floral.bottom-right {
-      bottom: 18px;
-      right: 18px;
-      transform: scale(-1);
-      animation-delay: .3s;
-    }
-
-    .stem {
+    .vine {
       fill: none;
       stroke: #8eae95;
-      stroke-width: 1.5;
+      stroke-width: 1.15;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    .leaf {
-      fill: #c5d9c4;
+    .vine-leaf {
+      fill: #c8dcc8;
       stroke: #8eae95;
-      stroke-width: .9;
+      stroke-width: .65;
     }
 
-    .petal-pink {
-      fill: #f0c8d2;
-      stroke: #dca6b5;
-      stroke-width: .8;
+    .flower-pink {
+      fill: #f0cbd5;
+      stroke: #dba6b5;
+      stroke-width: .65;
     }
 
-    .petal-blue {
-      fill: #c8e0ec;
+    .flower-blue {
+      fill: #c9e0eb;
       stroke: #9ebfd0;
-      stroke-width: .8;
+      stroke-width: .65;
     }
 
-    .petal-cream {
-      fill: #fff3df;
-      stroke: #d9c19b;
-      stroke-width: .8;
+    .flower-cream {
+      fill: #fff1dc;
+      stroke: #d7bd93;
+      stroke-width: .65;
     }
 
-    .flower-center { fill: #d1b17c; }
+    .flower-dot { fill: #d0b17d; }
 
     .scroll-cue {
       position: relative;
@@ -214,7 +181,7 @@
       flex-direction: column;
       align-items: center;
       gap: 3px;
-      margin-top: 17px;
+      margin-top: 16px;
       color: var(--muted);
       font: 9px/1.5 var(--sans);
       letter-spacing: .16em;
@@ -227,7 +194,7 @@
       animation: arrowBounce 1.8s ease-in-out infinite;
     }
 
-    /* SECTIONS */
+    /* SHARED SECTIONS */
 
     section {
       position: relative;
@@ -236,16 +203,16 @@
     }
 
     .inner {
-      width: min(680px, 100%);
-      margin: 0 auto;
       position: relative;
       z-index: 2;
+      width: min(680px, 100%);
+      margin: 0 auto;
     }
 
     .section-label {
       margin-bottom: 15px;
+      color: var(--pink-dark);
       text-align: center;
-      color: var(--pink-deep);
       font: 10px/1.8 var(--sans);
       letter-spacing: .23em;
       text-transform: uppercase;
@@ -253,8 +220,8 @@
 
     .section-heading {
       margin: 0 0 29px;
-      text-align: center;
       color: #68565c;
+      text-align: center;
       font-size: clamp(36px, 7vw, 49px);
       font-weight: 400;
       line-height: 1.12;
@@ -265,8 +232,8 @@
       align-items: center;
       justify-content: center;
       gap: 13px;
-      margin: 28px auto;
-      color: var(--pink-deep);
+      margin: 27px auto;
+      color: var(--pink-dark);
     }
 
     .divider::before,
@@ -280,7 +247,7 @@
     .divider::after { transform: rotate(180deg); }
 
     .divider span {
-      font-size: 19px;
+      font-size: 17px;
       animation: softPulse 3s ease-in-out infinite;
     }
 
@@ -319,7 +286,7 @@
         #f3f7f2;
     }
 
-    .countdown-section .section-label { color: var(--green-deep); }
+    .countdown-section .section-label { color: var(--green-dark); }
 
     .countdown {
       display: grid;
@@ -331,9 +298,9 @@
 
     .countdown-item {
       padding: 18px 5px 15px;
-      background: rgba(255,255,255,.72);
       border: 1px solid rgba(157,187,162,.4);
       border-radius: 60px 60px 15px 15px;
+      background: rgba(255,255,255,.72);
       box-shadow: 0 6px 20px rgba(86,112,94,.04);
       transition: transform .3s ease, box-shadow .3s ease;
     }
@@ -345,7 +312,7 @@
 
     .countdown strong {
       display: block;
-      color: #587662;
+      color: var(--green-dark);
       font-size: clamp(27px, 6vw, 41px);
       font-weight: 500;
       line-height: 1.2;
@@ -378,23 +345,23 @@
     }
 
     .date {
-      color: var(--blue-deep);
+      color: #668ba2;
       font: 11px/2 var(--sans);
       letter-spacing: .16em;
     }
 
     .event-time {
       margin-top: 12px;
-      color: var(--pink-deep);
+      color: var(--pink-dark);
       font-size: clamp(28px, 6vw, 36px);
     }
 
     .venue-flower {
       display: block;
-      width: 42px;
-      height: 42px;
+      width: 39px;
+      height: 39px;
       margin: 0 auto 13px;
-      animation: gentleFloat 5s ease-in-out infinite;
+      animation: flowerFloat 4s ease-in-out infinite;
     }
 
     .venue {
@@ -425,7 +392,7 @@
       justify-content: center;
       min-height: 47px;
       padding: 13px 22px;
-      border: 1px solid var(--green-deep);
+      border: 1px solid var(--green-dark);
       border-radius: 40px;
       text-decoration: none;
       font: 10px var(--sans);
@@ -440,14 +407,14 @@
     }
 
     .primary {
-      background: var(--green-deep);
       color: white;
+      background: var(--green-dark);
     }
 
     .primary:hover { background: #42634f; }
 
     .secondary {
-      color: var(--green-deep);
+      color: var(--green-dark);
       border-color: #b5c9b9;
       background: rgba(255,255,255,.65);
     }
@@ -465,15 +432,6 @@
         linear-gradient(135deg, #f6f0f8, #fff4f5 48%, #eff6f0);
     }
 
-    .closing::before {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(200,173,131,.45);
-      border-radius: 135px 135px 12px 12px;
-      pointer-events: none;
-    }
-
     .closing h2 {
       margin: 18px 0 12px;
       color: #65545a;
@@ -484,7 +442,7 @@
 
     .signature {
       margin: 0;
-      color: var(--pink-deep);
+      color: var(--pink-dark);
       font-size: clamp(23px, 5vw, 29px);
       font-style: italic;
       line-height: 1.5;
@@ -492,26 +450,26 @@
 
     .closing-flower {
       display: block;
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       margin: 23px auto 0;
-      animation: gentleFloat 5s ease-in-out infinite;
+      animation: flowerFloat 4s ease-in-out infinite;
     }
 
     footer {
       padding: 19px 20px;
-      background: #edf4ee;
       color: #708576;
+      background: #edf4ee;
       text-align: center;
       font: 9px/1.8 var(--sans);
       letter-spacing: .14em;
     }
 
-    /* SCROLL ANIMATION */
+    /* ANIMATIONS */
 
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(22px);
       transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
     }
 
@@ -520,12 +478,7 @@
       transform: translateY(0);
     }
 
-    @keyframes enter {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes nameEnter {
+    @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
       to { opacity: 1; transform: translateY(0); }
     }
@@ -535,14 +488,9 @@
       to { opacity: 1; }
     }
 
-    @keyframes floralAppear {
-      from { opacity: 0; }
-      to { opacity: .9; }
-    }
-
-    @keyframes gentleFloat {
+    @keyframes flowerFloat {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
+      50% { transform: translateY(-3px); }
     }
 
     @keyframes arrowBounce {
@@ -551,37 +499,25 @@
     }
 
     @keyframes softPulse {
-      0%, 100% { opacity: .75; }
+      0%, 100% { opacity: .7; }
       50% { opacity: 1; }
     }
 
-    /* RESPONSIVE */
+    /* MOBILE */
 
     @media (max-width: 600px) {
-      .hero { padding: 75px 22px 36px; }
-
-      .hero::before {
-        inset: 12px;
-        border-radius: 130px 130px 10px 10px;
-      }
+      .hero { padding: 65px 22px 30px; }
 
       h1 {
+        margin-top: 24px;
         font-size: clamp(48px, 11vw, 70px);
-        margin-top: 27px;
       }
 
-      .subtitle { margin-top: 21px; }
+      .subtitle { margin-top: 18px; }
 
-      .corner-floral {
-        width: clamp(82px, 23vw, 120px);
-      }
+      .hero-date { margin-top: 11px; }
 
-      .corner-floral.top-left { top: 12px; left: 12px; }
-      .corner-floral.top-right { top: 12px; right: 12px; }
-      .corner-floral.bottom-left { bottom: 12px; left: 12px; }
-      .corner-floral.bottom-right { bottom: 12px; right: 12px; }
-
-      .scroll-cue { margin-top: 15px; }
+      .scroll-cue { margin-top: 14px; }
 
       section { padding: 68px 21px; }
 
@@ -606,24 +542,19 @@
       }
 
       .closing { padding: 68px 22px; }
-
-      .closing::before {
-        inset: 12px;
-        border-radius: 110px 110px 10px 10px;
-      }
     }
 
     @media (max-height: 680px) and (min-width: 601px) {
       .hero {
         min-height: 720px;
         padding-top: 65px;
-        padding-bottom: 38px;
+        padding-bottom: 35px;
       }
 
       h1 {
-        font-size: clamp(52px, 8vw, 75px);
         margin-top: 22px;
         margin-bottom: 16px;
+        font-size: clamp(52px, 8vw, 75px);
       }
 
       .subtitle { margin-top: 17px; }
@@ -652,86 +583,108 @@
 
   <header class="hero" id="home">
 
-    <!-- Refined botanical branch: top left -->
-    <svg class="corner-floral top-left" viewBox="0 0 150 175" aria-hidden="true">
-      <g class="stem">
-        <path d="M-8 168 C27 140 35 101 66 66 C80 50 91 33 95 16"/>
-        <path d="M28 125 C10 111 7 95 10 83"/>
-        <path d="M43 102 C64 103 76 93 82 81"/>
-        <path d="M66 65 C47 57 43 43 47 31"/>
-      </g>
+    <!-- Continuous hand-painted botanical frame: no separate corner bouquets -->
+    <svg class="floral-frame" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <g id="tinyPinkFlower">
+          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5"/>
+          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5" transform="rotate(72)"/>
+          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5" transform="rotate(144)"/>
+          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5" transform="rotate(216)"/>
+          <ellipse class="flower-pink" cy="-5" rx="3.2" ry="5" transform="rotate(288)"/>
+          <circle class="flower-dot" r="1.8"/>
+        </g>
 
-      <path class="leaf" d="M18 121 C-1 111 -5 94 3 82 C21 90 28 105 18 121Z"/>
-      <path class="leaf" d="M43 102 C47 83 63 77 75 84 C68 99 56 105 43 102Z"/>
-      <path class="leaf" d="M61 70 C43 61 39 46 47 34 C63 44 69 57 61 70Z"/>
+        <g id="tinyBlueFlower">
+          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5"/>
+          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5" transform="rotate(72)"/>
+          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5" transform="rotate(144)"/>
+          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5" transform="rotate(216)"/>
+          <ellipse class="flower-blue" cy="-4.5" rx="2.8" ry="4.5" transform="rotate(288)"/>
+          <circle class="flower-dot" r="1.5"/>
+        </g>
+      </defs>
 
-      <g transform="translate(96 19) scale(.73)">
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10"/>
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10" transform="rotate(72)"/>
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10" transform="rotate(144)"/>
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10" transform="rotate(216)"/>
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10" transform="rotate(288)"/>
-        <circle class="flower-center" r="4"/>
-      </g>
+      <!-- Fine gold inner frame -->
+      <path class="frame-line" d="M24 800 V150 Q24 24 150 24 H1050 Q1176 24 1176 150 V800"/>
 
-      <g transform="translate(47 31) scale(.48)">
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(72)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(144)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(216)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(288)"/>
-        <circle class="flower-center" r="4"/>
-      </g>
+      <!-- Top border vine -->
+      <path class="vine" d="M42 43 C160 28 225 55 320 41 S480 31 590 43 S780 54 890 40 S1040 30 1158 44"/>
 
-      <g transform="translate(111 33) scale(.37)">
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10"/>
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10" transform="rotate(72)"/>
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10" transform="rotate(144)"/>
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10" transform="rotate(216)"/>
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10" transform="rotate(288)"/>
-        <circle class="flower-center" r="4"/>
-      </g>
-    </svg>
+      <path class="vine" d="M105 38 q-12 -14 -24 -10 q7 15 24 10
+                            M177 42 q10 -15 24 -10 q-7 15 -24 10
+                            M274 43 q-11 -14 -22 -9 q6 14 22 9
+                            M366 38 q10 -14 21 -9 q-6 14 -21 9
+                            M461 39 q-11 -13 -22 -8 q6 13 22 8
+                            M551 42 q10 -14 21 -9 q-6 14 -21 9
+                            M650 43 q-11 -14 -22 -9 q6 14 22 9
+                            M747 43 q10 -14 21 -9 q-6 14 -21 9
+                            M846 40 q-11 -14 -22 -9 q6 14 22 9
+                            M943 39 q10 -14 21 -9 q-6 14 -21 9
+                            M1040 40 q-11 -14 -22 -9 q6 14 22 9
+                            M1112 43 q10 -14 21 -9 q-6 14 -21 9"/>
 
-    <!-- Matching top-right branch -->
-    <svg class="corner-floral top-right" viewBox="0 0 150 175" aria-hidden="true">
-      <g class="stem">
-        <path d="M-8 168 C27 140 35 101 66 66 C80 50 91 33 95 16"/>
-        <path d="M28 125 C10 111 7 95 10 83"/>
-        <path d="M43 102 C64 103 76 93 82 81"/>
-        <path d="M66 65 C47 57 43 43 47 31"/>
-      </g>
+      <use href="#tinyPinkFlower" x="135" y="38"/>
+      <use href="#tinyBlueFlower" x="321" y="41"/>
+      <use href="#tinyPinkFlower" x="505" y="39"/>
+      <use href="#tinyBlueFlower" x="700" y="43"/>
+      <use href="#tinyPinkFlower" x="890" y="40"/>
+      <use href="#tinyBlueFlower" x="1070" y="39"/>
 
-      <path class="leaf" d="M18 121 C-1 111 -5 94 3 82 C21 90 28 105 18 121Z"/>
-      <path class="leaf" d="M43 102 C47 83 63 77 75 84 C68 99 56 105 43 102Z"/>
-      <path class="leaf" d="M61 70 C43 61 39 46 47 34 C63 44 69 57 61 70Z"/>
+      <!-- Left border: thin, wandering vine -->
+      <path class="vine" d="M31 75 C42 160 22 215 35 292 S43 425 31 500 S24 650 39 745"/>
 
-      <g transform="translate(96 19) scale(.73)">
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10"/>
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10" transform="rotate(72)"/>
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10" transform="rotate(144)"/>
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10" transform="rotate(216)"/>
-        <ellipse class="petal-pink" cy="-10" rx="6.5" ry="10" transform="rotate(288)"/>
-        <circle class="flower-center" r="4"/>
-      </g>
+      <path class="vine" d="M33 135 q18 -9 18 -25 q-17 4 -18 25
+                            M30 214 q-16 -9 -16 -25 q16 4 16 25
+                            M35 303 q18 -10 18 -26 q-17 4 -18 26
+                            M36 395 q-16 -9 -16 -25 q16 4 16 25
+                            M31 495 q18 -10 18 -26 q-17 4 -18 26
+                            M29 590 q-16 -9 -16 -25 q16 4 16 25
+                            M35 683 q18 -10 18 -26 q-17 4 -18 26"/>
 
-      <g transform="translate(47 31) scale(.48)">
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(72)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(144)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(216)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(288)"/>
-        <circle class="flower-center" r="4"/>
-      </g>
+      <use href="#tinyPinkFlower" x="34" y="174"/>
+      <use href="#tinyBlueFlower" x="31" y="352"/>
+      <use href="#tinyPinkFlower" x="32" y="548"/>
+      <use href="#tinyBlueFlower" x="35" y="722"/>
 
-      <g transform="translate(111 33) scale(.37)">
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10"/>
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10" transform="rotate(72)"/>
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10" transform="rotate(144)"/>
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10" transform="rotate(216)"/>
-        <ellipse class="petal-cream" cy="-10" rx="6.5" ry="10" transform="rotate(288)"/>
-        <circle class="flower-center" r="4"/>
-      </g>
+      <!-- Right border -->
+      <path class="vine" d="M1169 75 C1158 160 1178 215 1165 292 S1157 425 1169 500 S1176 650 1161 745"/>
+
+      <path class="vine" d="M1167 135 q-18 -9 -18 -25 q17 4 18 25
+                            M1170 214 q16 -9 16 -25 q-16 4 -16 25
+                            M1165 303 q-18 -10 -18 -26 q17 4 18 26
+                            M1164 395 q16 -9 16 -25 q-16 4 -16 25
+                            M1169 495 q-18 -10 -18 -26 q17 4 18 26
+                            M1171 590 q16 -9 16 -25 q-16 4 -16 25
+                            M1165 683 q-18 -10 -18 -26 q17 4 18 26"/>
+
+      <use href="#tinyBlueFlower" x="1166" y="174"/>
+      <use href="#tinyPinkFlower" x="1169" y="352"/>
+      <use href="#tinyBlueFlower" x="1168" y="548"/>
+      <use href="#tinyPinkFlower" x="1165" y="722"/>
+
+      <!-- Bottom border -->
+      <path class="vine" d="M42 757 C160 772 225 745 320 759 S480 769 590 757 S780 746 890 760 S1040 770 1158 756"/>
+
+      <path class="vine" d="M105 762 q-12 14 -24 10 q7 -15 24 -10
+                            M177 758 q10 15 24 10 q-7 -15 -24 -10
+                            M274 757 q-11 14 -22 9 q6 -14 22 -9
+                            M366 762 q10 14 21 9 q-6 -14 -21 -9
+                            M461 761 q-11 13 -22 8 q6 -13 22 -8
+                            M551 758 q10 14 21 9 q-6 -14 -21 -9
+                            M650 757 q-11 14 -22 9 q6 -14 22 -9
+                            M747 757 q10 14 21 9 q-6 -14 -21 -9
+                            M846 760 q-11 14 -22 9 q6 -14 22 -9
+                            M943 761 q10 14 21 9 q-6 -14 -21 -9
+                            M1040 760 q-11 14 -22 9 q6 -14 22 -9
+                            M1112 757 q10 14 21 9 q-6 -14 -21 -9"/>
+
+      <use href="#tinyBlueFlower" x="135" y="762"/>
+      <use href="#tinyPinkFlower" x="321" y="759"/>
+      <use href="#tinyBlueFlower" x="505" y="761"/>
+      <use href="#tinyPinkFlower" x="700" y="757"/>
+      <use href="#tinyBlueFlower" x="890" y="760"/>
+      <use href="#tinyPinkFlower" x="1070" y="761"/>
     </svg>
 
     <div class="hero-content">
@@ -747,13 +700,13 @@
 
       <svg class="hero-flower" viewBox="0 0 60 60" aria-hidden="true">
         <g transform="translate(30 30)">
-          <ellipse class="petal-pink" cy="-12" rx="7" ry="12"/>
-          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
-          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
-          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
-          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
-          <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
-          <circle class="flower-center" r="4"/>
+          <ellipse class="flower-pink" cy="-12" rx="7" ry="12"/>
+          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
+          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
+          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
+          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
+          <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
+          <circle class="flower-dot" r="4"/>
         </g>
       </svg>
 
@@ -764,44 +717,6 @@
       <span>Scroll to explore</span>
       <span class="arrow">⌄</span>
     </div>
-
-    <!-- Small bottom-corner botanical accents -->
-    <svg class="corner-floral bottom-left" viewBox="0 0 150 175" aria-hidden="true">
-      <g class="stem">
-        <path d="M-8 168 C27 140 35 101 66 66 C80 50 91 33 95 16"/>
-        <path d="M28 125 C10 111 7 95 10 83"/>
-        <path d="M43 102 C64 103 76 93 82 81"/>
-      </g>
-      <path class="leaf" d="M18 121 C-1 111 -5 94 3 82 C21 90 28 105 18 121Z"/>
-      <path class="leaf" d="M43 102 C47 83 63 77 75 84 C68 99 56 105 43 102Z"/>
-      <g transform="translate(96 19) scale(.73)">
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(72)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(144)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(216)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(288)"/>
-        <circle class="flower-center" r="4"/>
-      </g>
-    </svg>
-
-    <svg class="corner-floral bottom-right" viewBox="0 0 150 175" aria-hidden="true">
-      <g class="stem">
-        <path d="M-8 168 C27 140 35 101 66 66 C80 50 91 33 95 16"/>
-        <path d="M28 125 C10 111 7 95 10 83"/>
-        <path d="M43 102 C64 103 76 93 82 81"/>
-      </g>
-      <path class="leaf" d="M18 121 C-1 111 -5 94 3 82 C21 90 28 105 18 121Z"/>
-      <path class="leaf" d="M43 102 C47 83 63 77 75 84 C68 99 56 105 43 102Z"/>
-      <g transform="translate(96 19) scale(.73)">
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(72)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(144)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(216)"/>
-        <ellipse class="petal-blue" cy="-10" rx="6.5" ry="10" transform="rotate(288)"/>
-        <circle class="flower-center" r="4"/>
-      </g>
-    </svg>
-
   </header>
 
   <main>
@@ -848,13 +763,13 @@
 
         <svg class="venue-flower" viewBox="0 0 60 60" aria-hidden="true">
           <g transform="translate(30 30)">
-            <ellipse class="petal-blue" cy="-12" rx="7" ry="12"/>
-            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
-            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
-            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
-            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
-            <ellipse class="petal-blue" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
-            <circle class="flower-center" r="4"/>
+            <ellipse class="flower-blue" cy="-12" rx="7" ry="12"/>
+            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
+            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
+            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
+            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
+            <ellipse class="flower-blue" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
+            <circle class="flower-dot" r="4"/>
           </g>
         </svg>
 
@@ -878,13 +793,13 @@
 
         <svg class="closing-flower" viewBox="0 0 60 60" aria-hidden="true">
           <g transform="translate(30 30)">
-            <ellipse class="petal-pink" cy="-12" rx="7" ry="12"/>
-            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
-            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
-            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
-            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
-            <ellipse class="petal-pink" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
-            <circle class="flower-center" r="4"/>
+            <ellipse class="flower-pink" cy="-12" rx="7" ry="12"/>
+            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(60)"/>
+            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(120)"/>
+            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(180)"/>
+            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(240)"/>
+            <ellipse class="flower-pink" cy="-12" rx="7" ry="12" transform="rotate(300)"/>
+            <circle class="flower-dot" r="4"/>
           </g>
         </svg>
       </div>
