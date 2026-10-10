@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fff5f6">
-  <meta name="description" content="Celebrate the wedding reception of Geethika and Subramanian on 21 November 2026 in Pollachi.">
-  <title>Geethika & Subramanian — A New Chapter</title>
+  <meta name="description" content="Join us to celebrate the wedding reception of Geethika and Subramanian on 21 November 2026 in Pollachi.">
+
+  <title>Geethika &amp; Subramanian | Wedding Reception</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +15,20 @@
 
   <style>
     :root {
-      --pink: #e8a8b7;
+      --pink: #e9adbd;
       --pink-light: #fff0f3;
-      --pink-deep: #b96780;
-      --green: #8fae98;
-      --green-light: #edf5ee;
-      --green-deep: #547663;
-      --blue: #a9c9df;
+      --pink-deep: #b96e83;
+      --green: #9dbba2;
+      --green-light: #eef5ed;
+      --green-deep: #587963;
+      --blue: #b5d2e4;
       --blue-light: #eef6fb;
-      --blue-deep: #5b819b;
+      --blue-deep: #668ba2;
       --cream: #fffaf6;
-      --ink: #4d4849;
-      --muted: #817779;
-      --gold: #b89a70;
-      --white: #ffffff;
-      --line: #ead8d8;
+      --ink: #51494c;
+      --muted: #82777a;
+      --gold: #c4a474;
+      --line: #e9d8d3;
       --serif: "Cormorant Garamond", Georgia, serif;
       --sans: "DM Sans", Arial, sans-serif;
     }
@@ -50,24 +50,23 @@
       overflow-x: hidden;
     }
 
-    a, button {
-      -webkit-tap-highlight-color: transparent;
-    }
-
     a {
       color: inherit;
     }
 
+    a,
     button {
-      font: inherit;
+      -webkit-tap-highlight-color: transparent;
     }
 
     ::selection {
+      background: #f4d5de;
       color: var(--ink);
-      background: #f5d8e0;
     }
 
-    /* HERO */
+    /* =========================
+       HERO / OPENING
+    ========================= */
 
     .hero {
       min-height: 100svh;
@@ -76,105 +75,130 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
       isolation: isolate;
-      padding: 78px 22px 66px;
+      overflow: hidden;
+      padding: 100px 28px 110px;
       text-align: center;
       background:
-        radial-gradient(ellipse at 8% 15%, rgba(232,168,183,.32), transparent 32%),
-        radial-gradient(ellipse at 92% 22%, rgba(169,201,223,.42), transparent 34%),
-        radial-gradient(ellipse at 50% 100%, rgba(143,174,152,.28), transparent 43%),
-        linear-gradient(145deg, #fff5f6, #fffaf6 48%, #f0f7f5);
+        radial-gradient(
+          ellipse at 4% 12%,
+          rgba(233, 173, 189, .34),
+          transparent 34%
+        ),
+        radial-gradient(
+          ellipse at 96% 20%,
+          rgba(181, 210, 228, .45),
+          transparent 36%
+        ),
+        radial-gradient(
+          ellipse at 50% 100%,
+          rgba(157, 187, 162, .28),
+          transparent 42%
+        ),
+        linear-gradient(
+          135deg,
+          #fff3f5 0%,
+          #fffaf7 48%,
+          #f0f7f4 100%
+        );
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 18px;
-      border: 1px solid rgba(184,154,112,.48);
-      border-radius: 190px 190px 12px 12px;
+      border: 1px solid rgba(196, 164, 116, .52);
+      border-radius: 180px 180px 12px 12px;
       pointer-events: none;
-      z-index: -1;
+      z-index: 0;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      width: 310px;
-      height: 310px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
-      background: rgba(255,255,255,.35);
-      filter: blur(3px);
-      right: -170px;
-      bottom: 4%;
-      z-index: -1;
+      background: rgba(255, 255, 255, .3);
+      filter: blur(5px);
+      right: -180px;
+      bottom: 8%;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .hero-content {
-      width: min(700px, 100%);
+      width: min(720px, 100%);
       position: relative;
       z-index: 2;
-      animation: heroEnter 1.2s cubic-bezier(.2,.7,.2,1) both;
+      padding-bottom: 26px;
+      animation: heroEnter 1.2s cubic-bezier(.2, .7, .2, 1) both;
     }
 
     .eyebrow {
       font: 10px/1.9 var(--sans);
-      letter-spacing: .28em;
+      letter-spacing: .25em;
       text-transform: uppercase;
       color: var(--green-deep);
-    }
-
-    .hero .eyebrow {
-      animation: fadeIn 1.1s .2s both;
     }
 
     .hero h1 {
       font-family: var(--serif);
       font-weight: 400;
-      font-size: clamp(54px, 12vw, 94px);
+      font-size: clamp(52px, 10vw, 96px);
       line-height: .88;
       letter-spacing: -.045em;
-      margin: 30px 0 22px;
-      color: #65545a;
+      margin: 32px 0 22px;
+      color: #68565c;
     }
 
     .name {
       display: inline-block;
-      animation: nameReveal 1.15s cubic-bezier(.2,.7,.2,1) both;
+      animation: nameReveal 1.1s cubic-bezier(.2, .7, .2, 1) both;
     }
 
     .name.second {
-      animation-delay: .22s;
+      animation-delay: .2s;
     }
 
     .ampersand {
       display: inline-block;
       color: var(--pink-deep);
-      font-style: italic;
       font-size: .76em;
+      font-style: italic;
       margin: 12px 0 14px;
-      animation: ampersandFloat 4s ease-in-out infinite;
+      animation: ampersandFloat 4s ease-in-out 1.2s infinite;
     }
 
     .subtitle {
-      font-size: clamp(17px, 4vw, 21px);
-      line-height: 1.7;
+      font-size: clamp(19px, 4vw, 25px);
+      line-height: 1.5;
       color: var(--muted);
-      margin: 0 auto;
-      animation: fadeIn 1.2s .65s both;
+      margin: 28px auto 0;
+      animation: fadeIn 1.1s .7s both;
     }
 
     .hero-date {
-      margin-top: 25px;
+      margin-top: 23px;
       color: var(--green-deep);
-      animation: fadeIn 1.2s .9s both;
+      animation: fadeIn 1.1s .9s both;
     }
 
-    /* Botanical ornaments made from inline SVG */
+    .hero-flower {
+      display: block;
+      width: 46px;
+      height: 46px;
+      margin: 25px auto 0;
+      animation: flowerFloat 5s ease-in-out 1.4s infinite;
+    }
+
+    /* =========================
+       SVG FLORAL DECORATIONS
+    ========================= */
 
     .floral {
       position: absolute;
-      width: clamp(125px, 24vw, 235px);
+      width: clamp(120px, 23vw, 230px);
       height: auto;
       z-index: 1;
       pointer-events: none;
@@ -185,7 +209,9 @@
       top: 0;
       left: 0;
       transform-origin: top left;
-      animation: floralAppear 1.4s .25s both, gentleSway 7s 1.7s ease-in-out infinite;
+      animation:
+        floralAppear 1.3s .2s both,
+        gentleSway 7s 1.6s ease-in-out infinite;
     }
 
     .floral-top-right {
@@ -193,7 +219,9 @@
       right: 0;
       transform: scaleX(-1);
       transform-origin: top right;
-      animation: floralAppear 1.4s .45s both, gentleSway 8s 1.9s ease-in-out infinite;
+      animation:
+        floralAppear 1.3s .35s both,
+        gentleSway 8s 1.7s ease-in-out infinite;
     }
 
     .floral-bottom-left {
@@ -201,7 +229,9 @@
       left: 0;
       transform: scaleY(-1);
       transform-origin: bottom left;
-      animation: floralAppear 1.5s .5s both, gentleSway 8s 1.8s ease-in-out infinite;
+      animation:
+        floralAppear 1.4s .4s both,
+        gentleSway 8s 1.5s ease-in-out infinite;
     }
 
     .floral-bottom-right {
@@ -209,88 +239,351 @@
       right: 0;
       transform: scale(-1);
       transform-origin: bottom right;
-      animation: floralAppear 1.5s .35s both, gentleSway 7s 1.5s ease-in-out infinite;
+      animation:
+        floralAppear 1.4s .3s both,
+        gentleSway 7s 1.6s ease-in-out infinite;
     }
 
     .flower-stem {
       fill: none;
-      stroke: #83a58d;
+      stroke: #86a58c;
       stroke-width: 1.7;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
     .petal-pink {
-      fill: #efc1cc;
-      stroke: #d99bab;
+      fill: #f0c5cf;
+      stroke: #dca0af;
       stroke-width: 1;
     }
 
     .petal-blue {
-      fill: #c4dce9;
-      stroke: #96bdd1;
+      fill: #c8dfeb;
+      stroke: #9bbfd1;
       stroke-width: 1;
     }
 
     .petal-cream {
-      fill: #fff5df;
+      fill: #fff3dc;
       stroke: #d9c19b;
       stroke-width: 1;
     }
 
     .leaf {
-      fill: #b7d0b8;
-      stroke: #83a58d;
+      fill: #bad1b9;
+      stroke: #86a58c;
       stroke-width: 1;
     }
 
     .flower-center {
-      fill: #d6b57c;
+      fill: #d2b17a;
     }
 
-    .hero-flower {
-      width: 48px;
-      height: 48px;
-      margin: 25px auto 8px;
-      animation: flowerFloat 5s ease-in-out infinite;
-    }
+    /* =========================
+       SCROLL CUE
+    ========================= */
 
     .scroll-cue {
       position: absolute;
-      bottom: 30px;
+      bottom: 27px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 7px;
+      gap: 5px;
       color: var(--muted);
-      font: 9px var(--sans);
-      letter-spacing: .18em;
+      font: 9px/1.5 var(--sans);
+      letter-spacing: .16em;
       text-transform: uppercase;
-      animation: fadeIn 1.5s 1.2s both;
+      white-space: nowrap;
+      z-index: 3;
+      animation: fadeIn 1.2s 1.2s both;
     }
 
     .scroll-cue span:last-child {
       display: inline-block;
-      font-size: 20px;
+      font-size: 19px;
       animation: arrowBounce 1.8s ease-in-out infinite;
     }
 
-    /* BUTTONS */
+    /* =========================
+       SHARED SECTION STYLES
+    ========================= */
+
+    section {
+      position: relative;
+      padding: 84px 24px;
+      overflow: hidden;
+    }
+
+    .inner {
+      width: min(680px, 100%);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-label {
+      text-align: center;
+      font: 10px/1.8 var(--sans);
+      letter-spacing: .23em;
+      text-transform: uppercase;
+      color: var(--pink-deep);
+      margin-bottom: 17px;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(36px, 7vw, 49px);
+      line-height: 1.12;
+      font-weight: 400;
+      text-align: center;
+      margin: 0 0 32px;
+      color: #68565c;
+    }
+
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin: 30px auto;
+      color: var(--pink-deep);
+    }
+
+    .ornament-divider::before,
+    .ornament-divider::after {
+      content: "";
+      width: 55px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #d8b8a9
+      );
+    }
+
+    .ornament-divider::after {
+      transform: rotate(180deg);
+    }
+
+    .ornament-divider span {
+      display: inline-block;
+      font-size: 19px;
+      animation: tinyPulse 3.5s ease-in-out infinite;
+    }
+
+    /* =========================
+       STORY
+    ========================= */
+
+    .story {
+      text-align: center;
+      background:
+        radial-gradient(
+          ellipse at 0% 0%,
+          rgba(233, 173, 189, .18),
+          transparent 38%
+        ),
+        radial-gradient(
+          ellipse at 100% 100%,
+          rgba(181, 210, 228, .22),
+          transparent 40%
+        ),
+        var(--cream);
+    }
+
+    .story::before,
+    .story::after {
+      content: "✿";
+      position: absolute;
+      font-size: 105px;
+      line-height: 1;
+      opacity: .11;
+      pointer-events: none;
+    }
+
+    .story::before {
+      top: 30px;
+      left: -26px;
+      color: var(--pink-deep);
+      transform: rotate(-20deg);
+    }
+
+    .story::after {
+      bottom: 15px;
+      right: -25px;
+      color: var(--green-deep);
+      transform: rotate(20deg);
+    }
+
+    .story-copy {
+      max-width: 610px;
+      margin: 0 auto;
+      font-size: clamp(22px, 4.6vw, 28px);
+      line-height: 1.75;
+      font-weight: 400;
+      font-style: italic;
+      color: #65565b;
+      text-wrap: pretty;
+    }
+
+    .story-copy.second {
+      font-size: clamp(20px, 4.2vw, 25px);
+      line-height: 1.8;
+    }
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    .countdown-section {
+      text-align: center;
+      background:
+        radial-gradient(
+          ellipse at 8% 95%,
+          rgba(157, 187, 162, .23),
+          transparent 40%
+        ),
+        radial-gradient(
+          ellipse at 100% 0%,
+          rgba(181, 210, 228, .3),
+          transparent 42%
+        ),
+        #f2f7f3;
+    }
+
+    .countdown-section .section-label {
+      color: var(--green-deep);
+    }
+
+    .countdown-section .section-heading {
+      margin-bottom: 25px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 460px;
+      margin: 28px auto 0;
+    }
+
+    .countdown-item {
+      padding: 18px 5px 15px;
+      background: rgba(255, 255, 255, .7);
+      border: 1px solid rgba(157, 187, 162, .35);
+      border-radius: 60px 60px 16px 16px;
+      box-shadow: 0 6px 20px rgba(86, 112, 94, .04);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .countdown-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(86, 112, 94, .1);
+    }
+
+    .countdown strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(27px, 6vw, 41px);
+      line-height: 1.2;
+      font-weight: 500;
+      color: #587662;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .countdown span {
+      display: block;
+      margin-top: 7px;
+      font: 9px var(--sans);
+      letter-spacing: .1em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .countdown-message {
+      font: 13px/1.8 var(--sans);
+      color: var(--muted);
+      margin-top: 23px;
+    }
+
+    /* =========================
+       RECEPTION DETAILS
+    ========================= */
+
+    .details {
+      text-align: center;
+      background:
+        radial-gradient(
+          ellipse at 100% 100%,
+          rgba(233, 173, 189, .22),
+          transparent 38%
+        ),
+        radial-gradient(
+          ellipse at 0% 0%,
+          rgba(181, 210, 228, .25),
+          transparent 38%
+        ),
+        #fffaf8;
+    }
+
+    .date {
+      font: 11px/2 var(--sans);
+      letter-spacing: .16em;
+      color: var(--blue-deep);
+    }
+
+    .event-time {
+      margin-top: 12px;
+      font-size: clamp(28px, 6vw, 36px);
+      color: var(--pink-deep);
+    }
+
+    .venue-flower {
+      display: block;
+      margin: 0 auto 13px;
+      width: 43px;
+      height: 43px;
+      animation: flowerFloat 5s ease-in-out infinite;
+    }
+
+    .venue {
+      font-size: clamp(24px, 5vw, 31px);
+      line-height: 1.45;
+      color: #65545a;
+      margin: 12px 0 8px;
+    }
+
+    .venue small {
+      display: block;
+      font: 14px/1.9 var(--sans);
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 27px;
+    }
 
     .button {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      min-height: 48px;
-      padding: 14px 24px;
+      min-height: 47px;
+      padding: 13px 22px;
       border: 1px solid var(--green-deep);
       border-radius: 40px;
       text-decoration: none;
       cursor: pointer;
       font: 10px var(--sans);
-      letter-spacing: .13em;
+      letter-spacing: .12em;
       text-transform: uppercase;
       transition:
         transform .3s ease,
@@ -301,7 +594,7 @@
 
     .button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 9px 22px rgba(83,105,91,.12);
+      box-shadow: 0 9px 22px rgba(83, 105, 91, .12);
     }
 
     .primary {
@@ -316,263 +609,45 @@
     .secondary {
       color: var(--green-deep);
       border-color: #b5c9b9;
-      background: rgba(255,255,255,.55);
+      background: rgba(255, 255, 255, .6);
     }
 
     .secondary:hover {
       background: var(--green-light);
     }
 
-    /* SHARED SECTIONS */
-
-    section {
-      position: relative;
-      padding: 92px 23px;
-      overflow: hidden;
-    }
-
-    .inner {
-      width: min(660px, 100%);
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-label {
-      text-align: center;
-      font: 10px/1.8 var(--sans);
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      color: var(--pink-deep);
-      margin-bottom: 22px;
-    }
-
-    .section-heading {
-      font-family: var(--serif);
-      font-size: clamp(34px, 7vw, 48px);
-      line-height: 1.15;
-      font-weight: 400;
-      text-align: center;
-      margin: 0 0 30px;
-      color: #66545a;
-    }
-
-    .ornament-divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin: 36px auto;
-      color: var(--pink-deep);
-    }
-
-    .ornament-divider::before,
-    .ornament-divider::after {
-      content: "";
-      width: 62px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #d7b9a8);
-    }
-
-    .ornament-divider::after {
-      transform: rotate(180deg);
-    }
-
-    .ornament-divider span {
-      display: inline-block;
-      font-size: 19px;
-      animation: tinyPulse 3.5s ease-in-out infinite;
-    }
-
-    /* OUR STORY */
-
-    .story {
-      background:
-        radial-gradient(ellipse at 0% 0%, rgba(232,168,183,.17), transparent 38%),
-        radial-gradient(ellipse at 100% 100%, rgba(169,201,223,.22), transparent 40%),
-        var(--cream);
-      text-align: center;
-    }
-
-    .story::before,
-    .story::after {
-      content: "✿";
-      position: absolute;
-      font-size: 115px;
-      line-height: 1;
-      opacity: .12;
-      pointer-events: none;
-    }
-
-    .story::before {
-      top: 28px;
-      left: -30px;
-      color: var(--pink-deep);
-      transform: rotate(-20deg);
-    }
-
-    .story::after {
-      bottom: 15px;
-      right: -25px;
-      color: var(--green-deep);
-      transform: rotate(20deg);
-    }
-
-    .story-copy {
-      font-size: clamp(21px, 4.7vw, 26px);
-      line-height: 1.85;
-      font-weight: 400;
-      font-style: italic;
-      color: #65565b;
-      margin: 0 auto;
-      max-width: 610px;
-      text-wrap: pretty;
-    }
-
-    .story-copy.second {
-      font-size: clamp(19px, 4.4vw, 24px);
-      line-height: 1.9;
-    }
-
-    .supporting {
-      font-family: var(--sans);
-      font-size: 14px;
-      line-height: 1.95;
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto;
-    }
-
-    /* COUNTDOWN */
-
-    .countdown-section {
-      text-align: center;
-      background:
-        radial-gradient(ellipse at 8% 95%, rgba(143,174,152,.23), transparent 40%),
-        radial-gradient(ellipse at 100% 0%, rgba(169,201,223,.3), transparent 42%),
-        #f1f7f4;
-    }
-
-    .countdown-section .section-label {
-      color: var(--green-deep);
-    }
-
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      max-width: 480px;
-      margin: 36px auto 0;
-    }
-
-    .countdown-item {
-      padding: 20px 5px 17px;
-      background: rgba(255,255,255,.65);
-      border: 1px solid rgba(143,174,152,.32);
-      border-radius: 65px 65px 18px 18px;
-      box-shadow: 0 6px 20px rgba(86,112,94,.04);
-      transition: transform .35s ease, box-shadow .35s ease;
-    }
-
-    .countdown-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(86,112,94,.1);
-    }
-
-    .countdown strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: clamp(28px, 7vw, 43px);
-      line-height: 1.2;
-      font-weight: 500;
-      color: #587662;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .countdown span {
-      display: block;
-      margin-top: 8px;
-      font: 9px var(--sans);
-      letter-spacing: .12em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-
-    .countdown-message {
-      font: 13px/1.8 var(--sans);
-      color: var(--muted);
-      margin-top: 25px;
-    }
-
-    /* EVENT DETAILS */
-
-    .details {
-      text-align: center;
-      background:
-        radial-gradient(ellipse at 100% 100%, rgba(232,168,183,.22), transparent 38%),
-        radial-gradient(ellipse at 0% 0%, rgba(169,201,223,.25), transparent 38%),
-        #fffaf8;
-    }
-
-    .date {
-      font: 11px/2 var(--sans);
-      letter-spacing: .16em;
-      color: var(--blue-deep);
-    }
-
-    .event-time {
-      font-size: clamp(27px, 6vw, 35px);
-      color: var(--pink-deep);
-      margin-top: 12px;
-    }
-
-    .venue {
-      font-size: clamp(23px, 5vw, 29px);
-      line-height: 1.5;
-      color: #65545a;
-      margin: 24px 0 8px;
-    }
-
-    .venue small {
-      display: block;
-      font: 14px/1.9 var(--sans);
-      color: var(--muted);
-      margin-top: 5px;
-    }
-
-    .venue-flower {
-      display: block;
-      margin: 0 auto 12px;
-      width: 45px;
-      height: 45px;
-      animation: flowerFloat 5s ease-in-out infinite;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    /* CLOSING */
+    /* =========================
+       SHORT, ELEGANT CLOSING
+    ========================= */
 
     .closing {
-      padding: 88px 22px;
+      padding: 75px 24px;
       text-align: center;
       background:
-        radial-gradient(ellipse at 0% 0%, rgba(232,168,183,.33), transparent 40%),
-        radial-gradient(ellipse at 100% 100%, rgba(169,201,223,.4), transparent 42%),
-        linear-gradient(135deg, #f6f0f8, #fff4f5 48%, #eff6f0);
+        radial-gradient(
+          ellipse at 0% 0%,
+          rgba(233, 173, 189, .31),
+          transparent 40%
+        ),
+        radial-gradient(
+          ellipse at 100% 100%,
+          rgba(181, 210, 228, .38),
+          transparent 42%
+        ),
+        linear-gradient(
+          135deg,
+          #f6f0f8,
+          #fff4f5 48%,
+          #eff6f0
+        );
     }
 
     .closing::before {
       content: "";
       position: absolute;
-      inset: 20px;
-      border: 1px solid rgba(184,154,112,.45);
-      border-radius: 160px 160px 12px 12px;
+      inset: 18px;
+      border: 1px solid rgba(196, 164, 116, .45);
+      border-radius: 140px 140px 12px 12px;
       pointer-events: none;
     }
 
@@ -581,44 +656,48 @@
     }
 
     .closing h2 {
-      font-size: clamp(36px, 8vw, 54px);
+      font-size: clamp(37px, 8vw, 53px);
       font-weight: 400;
       line-height: 1.15;
       color: #65545a;
-      margin: 18px 0;
-    }
-
-    .closing p {
-      font-size: 19px;
-      line-height: 1.9;
-      color: #76696c;
-      max-width: 470px;
-      margin: 18px auto;
+      margin: 18px 0 12px;
     }
 
     .closing .signature {
       color: var(--pink-deep);
-      font-size: 24px;
+      font-size: clamp(23px, 5vw, 29px);
       font-style: italic;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .closing-flower {
+      display: block;
+      width: 42px;
+      height: 42px;
+      margin: 24px auto 0;
+      animation: flowerFloat 5s ease-in-out infinite;
     }
 
     footer {
       text-align: center;
       background: #edf4ee;
       color: #708576;
-      padding: 22px 20px;
+      padding: 19px 20px;
       font: 9px/1.8 var(--sans);
-      letter-spacing: .15em;
+      letter-spacing: .14em;
     }
 
-    /* SCROLL-TRIGGERED ANIMATIONS */
+    /* =========================
+       SCROLL REVEALS
+    ========================= */
 
     .reveal {
       opacity: 0;
-      transform: translateY(32px);
+      transform: translateY(26px);
       transition:
-        opacity .95s ease,
-        transform .95s cubic-bezier(.2,.7,.2,1);
+        opacity .85s ease,
+        transform .85s cubic-bezier(.2, .7, .2, 1);
     }
 
     .reveal.visible {
@@ -634,7 +713,9 @@
       transition-delay: .24s;
     }
 
-    /* KEYFRAMES */
+    /* =========================
+       ANIMATION KEYFRAMES
+    ========================= */
 
     @keyframes heroEnter {
       from {
@@ -650,13 +731,11 @@
     @keyframes nameReveal {
       from {
         opacity: 0;
-        transform: translateY(24px);
-        letter-spacing: .02em;
+        transform: translateY(22px);
       }
       to {
         opacity: 1;
         transform: translateY(0);
-        letter-spacing: -.045em;
       }
     }
 
@@ -676,13 +755,17 @@
     }
 
     @keyframes flowerFloat {
-      0%, 100% { transform: translateY(0) rotate(-3deg); }
-      50% { transform: translateY(-7px) rotate(3deg); }
+      0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+      }
+      50% {
+        transform: translateY(-6px) rotate(3deg);
+      }
     }
 
     @keyframes ampersandFloat {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+      50% { transform: translateY(-4px); }
     }
 
     @keyframes arrowBounce {
@@ -691,32 +774,59 @@
     }
 
     @keyframes tinyPulse {
-      0%, 100% { opacity: .7; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.18); }
+      0%, 100% {
+        opacity: .72;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.15);
+      }
     }
 
-    @media (max-width: 480px) {
+    /* =========================
+       RESPONSIVE LAYOUT
+    ========================= */
+
+    @media (max-width: 600px) {
       .hero {
-        padding-top: 95px;
-        padding-bottom: 85px;
+        padding: 100px 23px 100px;
       }
 
       .hero::before {
         inset: 12px;
-        border-radius: 150px 150px 10px 10px;
+        border-radius: 145px 145px 10px 10px;
+      }
+
+      .hero-content {
+        padding-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(49px, 11vw, 70px);
+        margin-top: 28px;
       }
 
       .floral {
-        width: 130px;
+        width: clamp(112px, 30vw, 155px);
       }
 
-      .floral-top-left,
-      .floral-top-right {
-        top: 0;
+      .scroll-cue {
+        bottom: 20px;
+        gap: 3px;
+        font-size: 8px;
       }
 
       section {
-        padding: 72px 21px;
+        padding: 70px 21px;
+      }
+
+      .story-copy {
+        line-height: 1.7;
+      }
+
+      .story-copy.second {
+        line-height: 1.75;
       }
 
       .countdown {
@@ -724,23 +834,53 @@
       }
 
       .countdown-item {
-        padding: 17px 2px 14px;
-        border-radius: 48px 48px 14px 14px;
+        padding: 16px 2px 13px;
+        border-radius: 45px 45px 13px 13px;
       }
 
       .countdown span {
         font-size: 8px;
-        letter-spacing: .06em;
+        letter-spacing: .05em;
       }
 
       .button {
-        padding: 13px 17px;
+        padding: 13px 16px;
         font-size: 9px;
+      }
+
+      .closing {
+        padding: 70px 22px;
       }
 
       .closing::before {
         inset: 12px;
-        border-radius: 130px 130px 10px 10px;
+        border-radius: 115px 115px 10px 10px;
+      }
+    }
+
+    @media (max-height: 680px) and (min-width: 601px) {
+      .hero {
+        min-height: 720px;
+        padding-top: 80px;
+        padding-bottom: 95px;
+      }
+
+      .hero h1 {
+        font-size: clamp(52px, 8vw, 75px);
+        margin-top: 22px;
+        margin-bottom: 16px;
+      }
+
+      .subtitle {
+        margin-top: 18px;
+      }
+
+      .hero-flower {
+        margin-top: 17px;
+      }
+
+      .hero-date {
+        margin-top: 15px;
       }
     }
 
@@ -763,20 +903,32 @@
 
 <body>
 
+  <!-- =========================
+       HERO
+  ========================= -->
+
   <header class="hero" id="home">
 
-    <!-- Decorative botanical corner: pink and blue flowers with green leaves -->
-    <svg class="floral floral-top-left" viewBox="0 0 220 250" aria-hidden="true">
+    <!-- Upper-left botanical arrangement -->
+    <svg class="floral floral-top-left"
+         viewBox="0 0 220 250"
+         aria-hidden="true">
       <g class="flower-stem">
         <path d="M-8 190 C45 160 42 95 92 43"/>
         <path d="M22 160 C5 126 13 103 32 88"/>
         <path d="M47 127 C78 131 91 113 98 92"/>
         <path d="M70 75 C100 79 113 60 116 43"/>
       </g>
-      <path class="leaf" d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
-      <path class="leaf" d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
-      <path class="leaf" d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
-      <path class="leaf" d="M69 70 C58 52 66 34 80 29 C91 47 84 62 69 70Z"/>
+
+      <path class="leaf"
+            d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
+      <path class="leaf"
+            d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
+      <path class="leaf"
+            d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+      <path class="leaf"
+            d="M69 70 C58 52 66 34 80 29 C91 47 84 62 69 70Z"/>
+
       <g transform="translate(96 42)">
         <ellipse class="petal-pink" cy="-13" rx="8" ry="13"/>
         <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
@@ -786,6 +938,7 @@
         <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(300)"/>
         <circle class="flower-center" r="5"/>
       </g>
+
       <g transform="translate(32 84) scale(.75)">
         <ellipse class="petal-blue" cy="-12" rx="8" ry="12"/>
         <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(72)"/>
@@ -794,6 +947,7 @@
         <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(288)"/>
         <circle class="flower-center" r="4"/>
       </g>
+
       <g transform="translate(116 43) scale(.55)">
         <ellipse class="petal-cream" cy="-11" rx="7" ry="11"/>
         <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(72)"/>
@@ -804,17 +958,26 @@
       </g>
     </svg>
 
-    <svg class="floral floral-top-right" viewBox="0 0 220 250" aria-hidden="true">
+    <!-- Upper-right botanical arrangement -->
+    <svg class="floral floral-top-right"
+         viewBox="0 0 220 250"
+         aria-hidden="true">
       <g class="flower-stem">
         <path d="M-8 190 C45 160 42 95 92 43"/>
         <path d="M22 160 C5 126 13 103 32 88"/>
         <path d="M47 127 C78 131 91 113 98 92"/>
         <path d="M70 75 C100 79 113 60 116 43"/>
       </g>
-      <path class="leaf" d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
-      <path class="leaf" d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
-      <path class="leaf" d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
-      <path class="leaf" d="M69 70 C58 52 66 34 80 29 C91 47 84 62 69 70Z"/>
+
+      <path class="leaf"
+            d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
+      <path class="leaf"
+            d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
+      <path class="leaf"
+            d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+      <path class="leaf"
+            d="M69 70 C58 52 66 34 80 29 C91 47 84 62 69 70Z"/>
+
       <g transform="translate(96 42)">
         <ellipse class="petal-pink" cy="-13" rx="8" ry="13"/>
         <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
@@ -824,6 +987,7 @@
         <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(300)"/>
         <circle class="flower-center" r="5"/>
       </g>
+
       <g transform="translate(32 84) scale(.75)">
         <ellipse class="petal-blue" cy="-12" rx="8" ry="12"/>
         <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(72)"/>
@@ -832,6 +996,7 @@
         <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(288)"/>
         <circle class="flower-center" r="4"/>
       </g>
+
       <g transform="translate(116 43) scale(.55)">
         <ellipse class="petal-cream" cy="-11" rx="7" ry="11"/>
         <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(72)"/>
@@ -843,22 +1008,21 @@
     </svg>
 
     <div class="hero-content">
-      <div class="eyebrow">A celebration of love & togetherness</div>
+      <div class="eyebrow">A celebration of love &amp; togetherness</div>
 
       <h1>
         <span class="name">Geethika</span>
         <br>
-        <span class="ampersand">&</span>
+        <span class="ampersand">&amp;</span>
         <br>
         <span class="name second">Subramanian</span>
       </h1>
 
-      <p class="subtitle">
-        Two hearts. One horizon.<br>
-        A beautiful new beginning.
-      </p>
+      <p class="subtitle">Two hearts. One horizon.</p>
 
-      <svg class="hero-flower" viewBox="0 0 60 60" aria-hidden="true">
+      <svg class="hero-flower"
+           viewBox="0 0 60 60"
+           aria-hidden="true">
         <g transform="translate(30 30)">
           <ellipse class="petal-pink" cy="-13" rx="8" ry="13"/>
           <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
@@ -870,23 +1034,31 @@
         </g>
       </svg>
 
-      <div class="eyebrow hero-date">Saturday · 21 November 2026</div>
+      <div class="eyebrow hero-date">
+        Saturday · 21 November 2026
+      </div>
     </div>
 
     <div class="scroll-cue" aria-hidden="true">
-      <span>Discover our story</span>
+      <span>Scroll to explore</span>
       <span>⌄</span>
     </div>
 
-    <svg class="floral floral-bottom-left" viewBox="0 0 220 250" aria-hidden="true">
+    <!-- Lower-left flowers -->
+    <svg class="floral floral-bottom-left"
+         viewBox="0 0 220 250"
+         aria-hidden="true">
       <g class="flower-stem">
         <path d="M-8 190 C45 160 42 95 92 43"/>
         <path d="M22 160 C5 126 13 103 32 88"/>
         <path d="M47 127 C78 131 91 113 98 92"/>
       </g>
-      <path class="leaf" d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
-      <path class="leaf" d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
-      <path class="leaf" d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+      <path class="leaf"
+            d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
+      <path class="leaf"
+            d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
+      <path class="leaf"
+            d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
       <g transform="translate(96 42)">
         <ellipse class="petal-blue" cy="-13" rx="8" ry="13"/>
         <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
@@ -898,15 +1070,21 @@
       </g>
     </svg>
 
-    <svg class="floral floral-bottom-right" viewBox="0 0 220 250" aria-hidden="true">
+    <!-- Lower-right flowers -->
+    <svg class="floral floral-bottom-right"
+         viewBox="0 0 220 250"
+         aria-hidden="true">
       <g class="flower-stem">
         <path d="M-8 190 C45 160 42 95 92 43"/>
         <path d="M22 160 C5 126 13 103 32 88"/>
         <path d="M47 127 C78 131 91 113 98 92"/>
       </g>
-      <path class="leaf" d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
-      <path class="leaf" d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
-      <path class="leaf" d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+      <path class="leaf"
+            d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
+      <path class="leaf"
+            d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
+      <path class="leaf"
+            d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
       <g transform="translate(96 42)">
         <ellipse class="petal-blue" cy="-13" rx="8" ry="13"/>
         <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
@@ -922,13 +1100,17 @@
 
   <main>
 
+    <!-- =========================
+         OUR STORY
+    ========================= -->
+
     <section class="story" id="story">
       <div class="inner reveal">
 
-        <div class="section-label">Our beginning</div>
+        <div class="section-label">Our story</div>
 
         <h2 class="section-heading">
-          A love that feels like home
+          A journey of togetherness
         </h2>
 
         <p class="story-copy">
@@ -943,18 +1125,12 @@
           As boundless as the sky and as steadfast as the earth, it remains the foundation upon which we begin to build a lifetime of our shared dreams and successful future.
         </p>
 
-        <div class="ornament-divider" aria-hidden="true">
-          <span>❀</span>
-        </div>
-
-        <p class="supporting">
-          With grateful hearts and the blessings of our families,
-          we invite you to join us as we celebrate this special
-          milestone and the beginning of our next chapter.
-        </p>
-
       </div>
     </section>
+
+    <!-- =========================
+         COUNTDOWN
+    ========================= -->
 
     <section class="countdown-section" id="countdown-section">
       <div class="inner reveal">
@@ -965,31 +1141,41 @@
           Until our special evening
         </h2>
 
-        <div class="countdown" aria-label="Countdown to the reception">
+        <div class="countdown"
+             aria-label="Countdown to the reception">
+
           <div class="countdown-item">
             <strong id="days">--</strong>
             <span>Days</span>
           </div>
+
           <div class="countdown-item">
             <strong id="hours">--</strong>
             <span>Hours</span>
           </div>
+
           <div class="countdown-item">
             <strong id="minutes">--</strong>
             <span>Minutes</span>
           </div>
+
           <div class="countdown-item">
             <strong id="seconds">--</strong>
             <span>Seconds</span>
           </div>
+
         </div>
 
         <p class="countdown-message" id="countdownMessage">
-          We look forward to celebrating with you.
+          Looking forward to celebrating this beautiful beginning with you.
         </p>
 
       </div>
     </section>
+
+    <!-- =========================
+         RECEPTION DETAILS
+    ========================= -->
 
     <section class="details" id="details">
       <div class="inner reveal">
@@ -997,11 +1183,16 @@
         <div class="section-label">Save the date</div>
 
         <h2 class="section-heading">
-          Join us for<br>our reception
+          Our wedding reception
         </h2>
 
-        <div class="date">SATURDAY · 21 NOVEMBER 2026</div>
-        <div class="event-time">6:30 PM onwards</div>
+        <div class="date">
+          SATURDAY · 21 NOVEMBER 2026
+        </div>
+
+        <div class="event-time">
+          6:30 PM onwards
+        </div>
 
         <div class="ornament-divider" aria-hidden="true">
           <span>✿</span>
@@ -1009,7 +1200,9 @@
 
         <div class="section-label">The venue</div>
 
-        <svg class="venue-flower" viewBox="0 0 60 60" aria-hidden="true">
+        <svg class="venue-flower"
+             viewBox="0 0 60 60"
+             aria-hidden="true">
           <g transform="translate(30 30)">
             <ellipse class="petal-blue" cy="-13" rx="8" ry="13"/>
             <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
@@ -1030,7 +1223,7 @@
           <a
             class="button primary"
             id="mapLink"
-            href="#"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Avani%20Hall%2C%20Amudhasurabi%2C%20Unjavelampatti%2C%20Pollachi"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -1040,7 +1233,7 @@
           <a
             class="button secondary"
             id="calendarLink"
-            href="#"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Wedding%20Reception%20%E2%80%94%20Geethika%20%26%20Subramanian&amp;dates=20261121T130000Z%2F20261121T160000Z&amp;location=Avani%20Hall%2C%20Amudhasurabi%2C%20Unjavelampatti%2C%20Pollachi"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -1051,26 +1244,34 @@
       </div>
     </section>
 
+    <!-- =========================
+         CLOSING
+    ========================= -->
+
     <section class="closing">
       <div class="inner reveal">
 
-        <div class="eyebrow">A new chapter awaits</div>
+        <div class="eyebrow">With love and happiness</div>
 
-        <h2>Be part of our story.</h2>
-
-        <p>
-          Your presence will make our celebration even more meaningful.
-          We cannot wait to share this beautiful evening with you.
-        </p>
-
-        <div class="ornament-divider" aria-hidden="true">
-          <span>❀</span>
-        </div>
+        <h2>With love,</h2>
 
         <p class="signature">
-          With love,<br>
-          Geethika & Subramanian
+          Geethika &amp; Subramanian
         </p>
+
+        <svg class="closing-flower"
+             viewBox="0 0 60 60"
+             aria-hidden="true">
+          <g transform="translate(30 30)">
+            <ellipse class="petal-pink" cy="-13" rx="8" ry="13"/>
+            <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
+            <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(120)"/>
+            <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(180)"/>
+            <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(240)"/>
+            <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(300)"/>
+            <circle class="flower-center" r="5"/>
+          </g>
+        </svg>
 
       </div>
     </section>
@@ -1078,18 +1279,23 @@
   </main>
 
   <footer>
-    MADE WITH LOVE · GEETHIKA & SUBRAMANIAN · 2026
+    MADE WITH LOVE · GEETHIKA &amp; SUBRAMANIAN · 2026
   </footer>
 
   <script>
+    // Reception date and time in India Standard Time.
     const eventDate = new Date("2026-11-21T18:30:00+05:30");
 
-    // Scroll to the invitation story when the guest scrolls down.
-    // The scroll cue is decorative, so the page remains simple and uncluttered.
-
+    // Countdown
     function updateCountdown() {
       const remaining = eventDate.getTime() - Date.now();
-      const fields = ["days", "hours", "minutes", "seconds"];
+
+      const fields = [
+        "days",
+        "hours",
+        "minutes",
+        "seconds"
+      ];
 
       if (remaining <= 0) {
         fields.forEach(id => {
@@ -1098,6 +1304,7 @@
 
         document.getElementById("countdownMessage").textContent =
           "Today is the day we celebrate together!";
+
         return;
       }
 
@@ -1118,7 +1325,8 @@
     setInterval(updateCountdown, 1000);
 
     // Google Maps directions
-    const venue = "Avani Hall, Amudhasurabi, Unjavelampatti, Pollachi";
+    const venue =
+      "Avani Hall, Amudhasurabi, Unjavelampatti, Pollachi";
 
     document.getElementById("mapLink").href =
       "https://www.google.com/maps/search/?api=1&query=" +
@@ -1129,7 +1337,7 @@
       action: "TEMPLATE",
       text: "Wedding Reception — Geethika & Subramanian",
       dates: "20261121T130000Z/20261121T160000Z",
-      details: "Join us to celebrate Geethika & Subramanian's wedding reception.",
+      details: "Wedding reception of Geethika & Subramanian.",
       location: venue
     });
 
@@ -1137,20 +1345,23 @@
       "https://calendar.google.com/calendar/render?" +
       calendarDetails.toString();
 
-    // Reveal content as the guest scrolls.
+    // Reveal sections smoothly as they enter the viewport.
     const revealElements = document.querySelectorAll(".reveal");
 
     if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12
-      });
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
 
       revealElements.forEach(element => {
         revealObserver.observe(element);
