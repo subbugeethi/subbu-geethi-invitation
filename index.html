@@ -4,22 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fbf5f3">
+  <meta name="theme-color" content="#fff5f6">
   <meta name="description" content="Celebrate the wedding reception of Geethika and Subramanian on 21 November 2026 in Pollachi.">
-
   <title>Geethika & Subramanian — A New Chapter</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --paper: #fbf5f3;
-      --ink: #514653;
-      --muted: #817681;
-      --rose: #bc929f;
-      --rose-light: #ead6dc;
-      --sage: #dce7df;
-      --lavender: #eee8f3;
-      --cream: #fffdfb;
-      --line: #e7d9dc;
+      --pink: #e8a8b7;
+      --pink-light: #fff0f3;
+      --pink-deep: #b96780;
+      --green: #8fae98;
+      --green-light: #edf5ee;
+      --green-deep: #547663;
+      --blue: #a9c9df;
+      --blue-light: #eef6fb;
+      --blue-deep: #5b819b;
+      --cream: #fffaf6;
+      --ink: #4d4849;
+      --muted: #817779;
+      --gold: #b89a70;
+      --white: #ffffff;
+      --line: #ead8d8;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
     }
 
     * {
@@ -28,16 +39,18 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 24px;
     }
 
     body {
       margin: 0;
-      background: var(--paper);
       color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      font-family: var(--serif);
+      overflow-x: hidden;
     }
 
-    button, a {
+    a, button {
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -49,364 +62,490 @@
       font: inherit;
     }
 
-    /* Opening section */
+    ::selection {
+      color: var(--ink);
+      background: #f5d8e0;
+    }
+
+    /* HERO */
 
     .hero {
       min-height: 100svh;
+      position: relative;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 48px 22px;
+      justify-content: center;
       overflow: hidden;
-      position: relative;
       isolation: isolate;
+      padding: 78px 22px 66px;
+      text-align: center;
       background:
-        radial-gradient(
-          ellipse at 15% 15%,
-          rgba(238, 232, 243, 0.9),
-          transparent 48%
-        ),
-        radial-gradient(
-          ellipse at 85% 80%,
-          rgba(220, 231, 223, 0.9),
-          transparent 45%
-        ),
-        linear-gradient(
-          145deg,
-          #fbf5f3 0%,
-          #fffaf7 50%,
-          #f7eff3 100%
-        );
+        radial-gradient(ellipse at 8% 15%, rgba(232,168,183,.32), transparent 32%),
+        radial-gradient(ellipse at 92% 22%, rgba(169,201,223,.42), transparent 34%),
+        radial-gradient(ellipse at 50% 100%, rgba(143,174,152,.28), transparent 43%),
+        linear-gradient(145deg, #fff5f6, #fffaf6 48%, #f0f7f5);
     }
 
-    .hero::before,
-    .hero::after {
+    .hero::before {
       content: "";
       position: absolute;
-      border: 1px solid rgba(188, 146, 159, 0.2);
-      border-radius: 50%;
+      inset: 18px;
+      border: 1px solid rgba(184,154,112,.48);
+      border-radius: 190px 190px 12px 12px;
       pointer-events: none;
       z-index: -1;
     }
 
-    .hero::before {
-      width: 340px;
-      height: 340px;
-      top: -190px;
-      right: -120px;
-      animation: float 9s ease-in-out infinite;
-    }
-
     .hero::after {
-      width: 260px;
-      height: 260px;
-      bottom: -150px;
-      left: -100px;
-      animation: float 11s ease-in-out infinite reverse;
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.35);
+      filter: blur(3px);
+      right: -170px;
+      bottom: 4%;
+      z-index: -1;
     }
 
     .hero-content {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: fadeUp 1.2s ease both;
+      width: min(700px, 100%);
+      position: relative;
+      z-index: 2;
+      animation: heroEnter 1.2s cubic-bezier(.2,.7,.2,1) both;
     }
 
     .eyebrow {
-      font: 10px/1.9 Arial, sans-serif;
-      letter-spacing: 0.25em;
+      font: 10px/1.9 var(--sans);
+      letter-spacing: .28em;
       text-transform: uppercase;
-      color: var(--rose);
+      color: var(--green-deep);
+    }
+
+    .hero .eyebrow {
+      animation: fadeIn 1.1s .2s both;
     }
 
     .hero h1 {
-      font-size: clamp(43px, 10vw, 76px);
-      font-weight: normal;
-      line-height: 1.12;
-      letter-spacing: -0.045em;
-      margin: 27px 0 18px;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(54px, 12vw, 94px);
+      line-height: .88;
+      letter-spacing: -.045em;
+      margin: 30px 0 22px;
+      color: #65545a;
+    }
+
+    .name {
+      display: inline-block;
+      animation: nameReveal 1.15s cubic-bezier(.2,.7,.2,1) both;
+    }
+
+    .name.second {
+      animation-delay: .22s;
     }
 
     .ampersand {
-      color: var(--rose);
+      display: inline-block;
+      color: var(--pink-deep);
       font-style: italic;
+      font-size: .76em;
+      margin: 12px 0 14px;
+      animation: ampersandFloat 4s ease-in-out infinite;
     }
 
     .subtitle {
-      font-size: 17px;
-      line-height: 1.9;
+      font-size: clamp(17px, 4vw, 21px);
+      line-height: 1.7;
       color: var(--muted);
-      max-width: 350px;
+      margin: 0 auto;
+      animation: fadeIn 1.2s .65s both;
     }
 
-    /* Delicate decorative lines */
-
-    .horizon {
-      position: relative;
-      width: min(420px, 85%);
-      height: 90px;
-      margin: 28px auto 25px;
-      overflow: hidden;
+    .hero-date {
+      margin-top: 25px;
+      color: var(--green-deep);
+      animation: fadeIn 1.2s .9s both;
     }
 
-    .horizon::before {
-      content: "";
+    /* Botanical ornaments made from inline SVG */
+
+    .floral {
       position: absolute;
-      top: 42px;
+      width: clamp(125px, 24vw, 235px);
+      height: auto;
+      z-index: 1;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .floral-top-left {
+      top: 0;
       left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #d4b5bf,
-        #d8c8b0,
-        transparent
-      );
+      transform-origin: top left;
+      animation: floralAppear 1.4s .25s both, gentleSway 7s 1.7s ease-in-out infinite;
     }
 
-    .wave {
+    .floral-top-right {
+      top: 0;
+      right: 0;
+      transform: scaleX(-1);
+      transform-origin: top right;
+      animation: floralAppear 1.4s .45s both, gentleSway 8s 1.9s ease-in-out infinite;
+    }
+
+    .floral-bottom-left {
+      bottom: 0;
+      left: 0;
+      transform: scaleY(-1);
+      transform-origin: bottom left;
+      animation: floralAppear 1.5s .5s both, gentleSway 8s 1.8s ease-in-out infinite;
+    }
+
+    .floral-bottom-right {
+      bottom: 0;
+      right: 0;
+      transform: scale(-1);
+      transform-origin: bottom right;
+      animation: floralAppear 1.5s .35s both, gentleSway 7s 1.5s ease-in-out infinite;
+    }
+
+    .flower-stem {
+      fill: none;
+      stroke: #83a58d;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .petal-pink {
+      fill: #efc1cc;
+      stroke: #d99bab;
+      stroke-width: 1;
+    }
+
+    .petal-blue {
+      fill: #c4dce9;
+      stroke: #96bdd1;
+      stroke-width: 1;
+    }
+
+    .petal-cream {
+      fill: #fff5df;
+      stroke: #d9c19b;
+      stroke-width: 1;
+    }
+
+    .leaf {
+      fill: #b7d0b8;
+      stroke: #83a58d;
+      stroke-width: 1;
+    }
+
+    .flower-center {
+      fill: #d6b57c;
+    }
+
+    .hero-flower {
+      width: 48px;
+      height: 48px;
+      margin: 25px auto 8px;
+      animation: flowerFloat 5s ease-in-out infinite;
+    }
+
+    .scroll-cue {
       position: absolute;
-      top: 37px;
-      left: -10%;
-      width: 120%;
-      height: 38px;
-      border-top: 1px solid #c9a8b4;
-      border-radius: 50%;
-      animation: drift 8s ease-in-out infinite alternate;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font: 9px var(--sans);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      animation: fadeIn 1.5s 1.2s both;
     }
 
-    .wave.two {
-      top: 47px;
-      left: -15%;
-      border-color: #c5d5c9;
-      animation-delay: -3s;
+    .scroll-cue span:last-child {
+      display: inline-block;
+      font-size: 20px;
+      animation: arrowBounce 1.8s ease-in-out infinite;
     }
 
-    @keyframes drift {
-      from {
-        transform: translateX(-2%) rotate(-1.5deg);
-      }
-      to {
-        transform: translateX(2%) rotate(1.5deg);
-      }
-    }
+    /* BUTTONS */
 
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-12px);
-      }
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes softPulse {
-      0%, 100% {
-        opacity: 0.65;
-      }
-      50% {
-        opacity: 1;
-      }
-    }
-
-    /* Buttons */
-
-    .primary,
-    .secondary {
+    .button {
       display: inline-flex;
       justify-content: center;
       align-items: center;
       min-height: 48px;
-      padding: 14px 23px;
+      padding: 14px 24px;
+      border: 1px solid var(--green-deep);
+      border-radius: 40px;
       text-decoration: none;
-      border: 1px solid var(--rose);
-      border-radius: 2px;
       cursor: pointer;
-      font: 10px Arial, sans-serif;
-      letter-spacing: 0.14em;
+      font: 10px var(--sans);
+      letter-spacing: .13em;
       text-transform: uppercase;
       transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 9px 22px rgba(83,105,91,.12);
     }
 
     .primary {
-      background: var(--rose);
-      color: #fffdfb;
+      background: var(--green-deep);
+      color: white;
     }
 
     .primary:hover {
-      background: #a97f8d;
-      border-color: #a97f8d;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(169, 127, 141, 0.18);
+      background: #42634f;
     }
 
     .secondary {
-      border-color: #d9c8ce;
-      background: rgba(255, 253, 251, 0.5);
-      color: var(--ink);
+      color: var(--green-deep);
+      border-color: #b5c9b9;
+      background: rgba(255,255,255,.55);
     }
 
     .secondary:hover {
-      background: var(--lavender);
-      transform: translateY(-2px);
+      background: var(--green-light);
     }
 
-    /* General sections */
+    /* SHARED SECTIONS */
 
     section {
-      padding: 82px 23px;
+      position: relative;
+      padding: 92px 23px;
+      overflow: hidden;
     }
 
     .inner {
-      width: min(620px, 100%);
+      width: min(660px, 100%);
       margin: 0 auto;
-    }
-
-    .story {
-      text-align: center;
-      background: linear-gradient(
-        180deg,
-        #fbf5f3,
-        #fffaf8
-      );
+      position: relative;
+      z-index: 2;
     }
 
     .section-label {
       text-align: center;
-      font: 10px Arial, sans-serif;
-      letter-spacing: 0.23em;
+      font: 10px/1.8 var(--sans);
+      letter-spacing: .24em;
       text-transform: uppercase;
-      color: var(--rose);
-      margin-bottom: 25px;
+      color: var(--pink-deep);
+      margin-bottom: 22px;
     }
 
-    .story h2,
-    .details h2 {
-      font-size: clamp(30px, 7vw, 44px);
-      line-height: 1.3;
-      font-weight: normal;
-      margin: 0 0 28px;
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(34px, 7vw, 48px);
+      line-height: 1.15;
+      font-weight: 400;
+      text-align: center;
+      margin: 0 0 30px;
+      color: #66545a;
     }
 
-    .story p {
-      font-size: clamp(18px, 4.5vw, 21px);
-      line-height: 1.95;
-      font-style: italic;
-      margin: 0 auto 30px;
-      max-width: 570px;
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 36px auto;
+      color: var(--pink-deep);
     }
 
-    .story .supporting {
-      font-size: 15px;
-      line-height: 1.95;
-      font-style: normal;
-      color: var(--muted);
-    }
-
-    .rule {
-      width: 58px;
+    .ornament-divider::before,
+    .ornament-divider::after {
+      content: "";
+      width: 62px;
       height: 1px;
-      background: var(--rose);
-      margin: 38px auto;
-      animation: softPulse 4s ease-in-out infinite;
+      background: linear-gradient(90deg, transparent, #d7b9a8);
     }
 
-    /* Countdown */
+    .ornament-divider::after {
+      transform: rotate(180deg);
+    }
+
+    .ornament-divider span {
+      display: inline-block;
+      font-size: 19px;
+      animation: tinyPulse 3.5s ease-in-out infinite;
+    }
+
+    /* OUR STORY */
+
+    .story {
+      background:
+        radial-gradient(ellipse at 0% 0%, rgba(232,168,183,.17), transparent 38%),
+        radial-gradient(ellipse at 100% 100%, rgba(169,201,223,.22), transparent 40%),
+        var(--cream);
+      text-align: center;
+    }
+
+    .story::before,
+    .story::after {
+      content: "✿";
+      position: absolute;
+      font-size: 115px;
+      line-height: 1;
+      opacity: .12;
+      pointer-events: none;
+    }
+
+    .story::before {
+      top: 28px;
+      left: -30px;
+      color: var(--pink-deep);
+      transform: rotate(-20deg);
+    }
+
+    .story::after {
+      bottom: 15px;
+      right: -25px;
+      color: var(--green-deep);
+      transform: rotate(20deg);
+    }
+
+    .story-copy {
+      font-size: clamp(21px, 4.7vw, 26px);
+      line-height: 1.85;
+      font-weight: 400;
+      font-style: italic;
+      color: #65565b;
+      margin: 0 auto;
+      max-width: 610px;
+      text-wrap: pretty;
+    }
+
+    .story-copy.second {
+      font-size: clamp(19px, 4.4vw, 24px);
+      line-height: 1.9;
+    }
+
+    .supporting {
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.95;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* COUNTDOWN */
 
     .countdown-section {
-      background: linear-gradient(
-        135deg,
-        #eee8f3 0%,
-        #f8edf0 55%,
-        #e6eee7 100%
-      );
       text-align: center;
+      background:
+        radial-gradient(ellipse at 8% 95%, rgba(143,174,152,.23), transparent 40%),
+        radial-gradient(ellipse at 100% 0%, rgba(169,201,223,.3), transparent 42%),
+        #f1f7f4;
+    }
+
+    .countdown-section .section-label {
+      color: var(--green-deep);
     }
 
     .countdown {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      max-width: 450px;
-      margin: 32px auto 0;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 480px;
+      margin: 36px auto 0;
     }
 
-    .countdown > div {
-      padding: 17px 4px;
-      background: rgba(255, 253, 251, 0.55);
-      border: 1px solid rgba(217, 200, 206, 0.55);
-      border-radius: 3px;
-      transition: transform 0.3s ease;
+    .countdown-item {
+      padding: 20px 5px 17px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(143,174,152,.32);
+      border-radius: 65px 65px 18px 18px;
+      box-shadow: 0 6px 20px rgba(86,112,94,.04);
+      transition: transform .35s ease, box-shadow .35s ease;
     }
 
-    .countdown > div:hover {
-      transform: translateY(-3px);
+    .countdown-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(86,112,94,.1);
     }
 
     .countdown strong {
       display: block;
-      font-size: clamp(27px, 7vw, 42px);
-      font-weight: normal;
+      font-family: var(--serif);
+      font-size: clamp(28px, 7vw, 43px);
+      line-height: 1.2;
+      font-weight: 500;
+      color: #587662;
       font-variant-numeric: tabular-nums;
-      color: #695765;
     }
 
     .countdown span {
       display: block;
-      margin-top: 7px;
-      font: 9px Arial, sans-serif;
-      letter-spacing: 0.12em;
+      margin-top: 8px;
+      font: 9px var(--sans);
+      letter-spacing: .12em;
       color: var(--muted);
       text-transform: uppercase;
     }
 
-    /* Reception details */
+    .countdown-message {
+      font: 13px/1.8 var(--sans);
+      color: var(--muted);
+      margin-top: 25px;
+    }
+
+    /* EVENT DETAILS */
 
     .details {
       text-align: center;
-      background: #fffaf8;
+      background:
+        radial-gradient(ellipse at 100% 100%, rgba(232,168,183,.22), transparent 38%),
+        radial-gradient(ellipse at 0% 0%, rgba(169,201,223,.25), transparent 38%),
+        #fffaf8;
     }
 
     .date {
-      font: 11px/2 Arial, sans-serif;
-      letter-spacing: 0.16em;
-      color: var(--rose);
+      font: 11px/2 var(--sans);
+      letter-spacing: .16em;
+      color: var(--blue-deep);
     }
 
     .event-time {
-      font-size: 25px;
+      font-size: clamp(27px, 6vw, 35px);
+      color: var(--pink-deep);
       margin-top: 12px;
     }
 
     .venue {
-      font-size: 19px;
-      line-height: 1.9;
-      margin: 25px 0;
+      font-size: clamp(23px, 5vw, 29px);
+      line-height: 1.5;
+      color: #65545a;
+      margin: 24px 0 8px;
     }
 
     .venue small {
       display: block;
-      font: 14px/1.9 Arial, sans-serif;
+      font: 14px/1.9 var(--sans);
       color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .venue-flower {
+      display: block;
+      margin: 0 auto 12px;
+      width: 45px;
+      height: 45px;
+      animation: flowerFloat 5s ease-in-out infinite;
     }
 
     .actions {
@@ -414,66 +553,72 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
-    /* Closing section */
+    /* CLOSING */
 
     .closing {
-      background: linear-gradient(
-        145deg,
-        #e6eee7 0%,
-        #f2eaf2 52%,
-        #f7e9ed 100%
-      );
-      color: var(--ink);
+      padding: 88px 22px;
       text-align: center;
-      padding: 80px 22px;
+      background:
+        radial-gradient(ellipse at 0% 0%, rgba(232,168,183,.33), transparent 40%),
+        radial-gradient(ellipse at 100% 100%, rgba(169,201,223,.4), transparent 42%),
+        linear-gradient(135deg, #f6f0f8, #fff4f5 48%, #eff6f0);
+    }
+
+    .closing::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(184,154,112,.45);
+      border-radius: 160px 160px 12px 12px;
+      pointer-events: none;
+    }
+
+    .closing .eyebrow {
+      color: var(--green-deep);
     }
 
     .closing h2 {
-      font-size: clamp(32px, 8vw, 48px);
-      font-weight: normal;
+      font-size: clamp(36px, 8vw, 54px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: #65545a;
       margin: 18px 0;
     }
 
     .closing p {
-      color: var(--muted);
-      font-size: 16px;
+      font-size: 19px;
       line-height: 1.9;
+      color: #76696c;
+      max-width: 470px;
+      margin: 18px auto;
     }
 
-    .closing .eyebrow {
-      color: var(--rose);
-    }
-
-    .closing .primary {
-      background: #fffdfb;
-      color: var(--ink);
-      border-color: #d9c8ce;
-    }
-
-    .closing .primary:hover {
-      background: #f5e7ec;
+    .closing .signature {
+      color: var(--pink-deep);
+      font-size: 24px;
+      font-style: italic;
     }
 
     footer {
       text-align: center;
-      background: #f7edf0;
-      color: #8d7c87;
-      padding: 22px 20px 28px;
-      font: 10px Arial, sans-serif;
-      letter-spacing: 0.12em;
+      background: #edf4ee;
+      color: #708576;
+      padding: 22px 20px;
+      font: 9px/1.8 var(--sans);
+      letter-spacing: .15em;
     }
 
-    /* Scroll reveal animations */
+    /* SCROLL-TRIGGERED ANIMATIONS */
 
     .reveal {
       opacity: 0;
-      transform: translateY(22px);
+      transform: translateY(32px);
       transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
+        opacity .95s ease,
+        transform .95s cubic-bezier(.2,.7,.2,1);
     }
 
     .reveal.visible {
@@ -481,34 +626,123 @@
       transform: translateY(0);
     }
 
-    /* Mobile refinements */
+    .reveal-delay-1 {
+      transition-delay: .12s;
+    }
 
-    @media (max-width: 420px) {
+    .reveal-delay-2 {
+      transition-delay: .24s;
+    }
+
+    /* KEYFRAMES */
+
+    @keyframes heroEnter {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes nameReveal {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+        letter-spacing: .02em;
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: -.045em;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes floralAppear {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes gentleSway {
+      0%, 100% { margin-top: 0; }
+      50% { margin-top: 5px; }
+    }
+
+    @keyframes flowerFloat {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-7px) rotate(3deg); }
+    }
+
+    @keyframes ampersandFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes arrowBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+
+    @keyframes tinyPulse {
+      0%, 100% { opacity: .7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.18); }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding-top: 95px;
+        padding-bottom: 85px;
+      }
+
+      .hero::before {
+        inset: 12px;
+        border-radius: 150px 150px 10px 10px;
+      }
+
+      .floral {
+        width: 130px;
+      }
+
+      .floral-top-left,
+      .floral-top-right {
+        top: 0;
+      }
+
       section {
-        padding: 65px 19px;
+        padding: 72px 21px;
       }
 
       .countdown {
-        gap: 5px;
+        gap: 6px;
       }
 
-      .countdown > div {
-        padding: 14px 2px;
+      .countdown-item {
+        padding: 17px 2px 14px;
+        border-radius: 48px 48px 14px 14px;
       }
 
       .countdown span {
         font-size: 8px;
-        letter-spacing: 0.08em;
+        letter-spacing: .06em;
       }
 
-      .primary,
-      .secondary {
-        padding: 13px 15px;
+      .button {
+        padding: 13px 17px;
         font-size: 9px;
       }
-    }
 
-    /* Respect accessibility settings */
+      .closing::before {
+        inset: 12px;
+        border-radius: 130px 130px 10px 10px;
+      }
+    }
 
     @media (prefers-reduced-motion: reduce) {
       *,
@@ -528,121 +762,264 @@
 </head>
 
 <body>
+
   <header class="hero" id="home">
+
+    <!-- Decorative botanical corner: pink and blue flowers with green leaves -->
+    <svg class="floral floral-top-left" viewBox="0 0 220 250" aria-hidden="true">
+      <g class="flower-stem">
+        <path d="M-8 190 C45 160 42 95 92 43"/>
+        <path d="M22 160 C5 126 13 103 32 88"/>
+        <path d="M47 127 C78 131 91 113 98 92"/>
+        <path d="M70 75 C100 79 113 60 116 43"/>
+      </g>
+      <path class="leaf" d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
+      <path class="leaf" d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
+      <path class="leaf" d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+      <path class="leaf" d="M69 70 C58 52 66 34 80 29 C91 47 84 62 69 70Z"/>
+      <g transform="translate(96 42)">
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(120)"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(180)"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(240)"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(300)"/>
+        <circle class="flower-center" r="5"/>
+      </g>
+      <g transform="translate(32 84) scale(.75)">
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12"/>
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(72)"/>
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(144)"/>
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(216)"/>
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(288)"/>
+        <circle class="flower-center" r="4"/>
+      </g>
+      <g transform="translate(116 43) scale(.55)">
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11"/>
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(72)"/>
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(144)"/>
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(216)"/>
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(288)"/>
+        <circle class="flower-center" r="4"/>
+      </g>
+    </svg>
+
+    <svg class="floral floral-top-right" viewBox="0 0 220 250" aria-hidden="true">
+      <g class="flower-stem">
+        <path d="M-8 190 C45 160 42 95 92 43"/>
+        <path d="M22 160 C5 126 13 103 32 88"/>
+        <path d="M47 127 C78 131 91 113 98 92"/>
+        <path d="M70 75 C100 79 113 60 116 43"/>
+      </g>
+      <path class="leaf" d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
+      <path class="leaf" d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
+      <path class="leaf" d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+      <path class="leaf" d="M69 70 C58 52 66 34 80 29 C91 47 84 62 69 70Z"/>
+      <g transform="translate(96 42)">
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(120)"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(180)"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(240)"/>
+        <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(300)"/>
+        <circle class="flower-center" r="5"/>
+      </g>
+      <g transform="translate(32 84) scale(.75)">
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12"/>
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(72)"/>
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(144)"/>
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(216)"/>
+        <ellipse class="petal-blue" cy="-12" rx="8" ry="12" transform="rotate(288)"/>
+        <circle class="flower-center" r="4"/>
+      </g>
+      <g transform="translate(116 43) scale(.55)">
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11"/>
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(72)"/>
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(144)"/>
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(216)"/>
+        <ellipse class="petal-cream" cy="-11" rx="7" ry="11" transform="rotate(288)"/>
+        <circle class="flower-center" r="4"/>
+      </g>
+    </svg>
+
     <div class="hero-content">
-      <div class="eyebrow">
-        A celebration of love &amp; togetherness
-      </div>
+      <div class="eyebrow">A celebration of love & togetherness</div>
 
       <h1>
-        Geethika<br>
-        <span class="ampersand">&amp;</span><br>
-        Subramanian
+        <span class="name">Geethika</span>
+        <br>
+        <span class="ampersand">&</span>
+        <br>
+        <span class="name second">Subramanian</span>
       </h1>
 
-      <div class="subtitle">
+      <p class="subtitle">
         Two hearts. One horizon.<br>
         A beautiful new beginning.
-      </div>
+      </p>
 
-      <div class="horizon" aria-hidden="true">
-        <div class="wave"></div>
-        <div class="wave two"></div>
-      </div>
+      <svg class="hero-flower" viewBox="0 0 60 60" aria-hidden="true">
+        <g transform="translate(30 30)">
+          <ellipse class="petal-pink" cy="-13" rx="8" ry="13"/>
+          <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
+          <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(120)"/>
+          <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(180)"/>
+          <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(240)"/>
+          <ellipse class="petal-pink" cy="-13" rx="8" ry="13" transform="rotate(300)"/>
+          <circle class="flower-center" r="5"/>
+        </g>
+      </svg>
 
-      <div class="eyebrow" style="margin-bottom:22px">
-        Saturday · 21 November 2026
-      </div>
-
-      <button class="primary" id="openInvite">
-        Open our invitation ↓
-      </button>
+      <div class="eyebrow hero-date">Saturday · 21 November 2026</div>
     </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Discover our story</span>
+      <span>⌄</span>
+    </div>
+
+    <svg class="floral floral-bottom-left" viewBox="0 0 220 250" aria-hidden="true">
+      <g class="flower-stem">
+        <path d="M-8 190 C45 160 42 95 92 43"/>
+        <path d="M22 160 C5 126 13 103 32 88"/>
+        <path d="M47 127 C78 131 91 113 98 92"/>
+      </g>
+      <path class="leaf" d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
+      <path class="leaf" d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
+      <path class="leaf" d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+      <g transform="translate(96 42)">
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(120)"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(180)"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(240)"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(300)"/>
+        <circle class="flower-center" r="5"/>
+      </g>
+    </svg>
+
+    <svg class="floral floral-bottom-right" viewBox="0 0 220 250" aria-hidden="true">
+      <g class="flower-stem">
+        <path d="M-8 190 C45 160 42 95 92 43"/>
+        <path d="M22 160 C5 126 13 103 32 88"/>
+        <path d="M47 127 C78 131 91 113 98 92"/>
+      </g>
+      <path class="leaf" d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
+      <path class="leaf" d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
+      <path class="leaf" d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+      <g transform="translate(96 42)">
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(120)"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(180)"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(240)"/>
+        <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(300)"/>
+        <circle class="flower-center" r="5"/>
+      </g>
+    </svg>
+
   </header>
 
   <main>
+
     <section class="story" id="story">
       <div class="inner reveal">
-        <div class="section-label">
-          Our beginning
-        </div>
 
-        <h2>A new chapter,<br>together.</h2>
+        <div class="section-label">Our beginning</div>
 
-        <p>
-          As boundless as the sky and as steadfast as the earth,
-          our love remains the foundation upon which we begin
-          building a lifetime of shared dreams and a beautiful
-          future together.
+        <h2 class="section-heading">
+          A love that feels like home
+        </h2>
+
+        <p class="story-copy">
+          Like the endless embrace of the sea and the shore, our hearts have found their forever.
         </p>
 
-        <div class="rule"></div>
+        <div class="ornament-divider" aria-hidden="true">
+          <span>✿</span>
+        </div>
+
+        <p class="story-copy second">
+          As boundless as the sky and as steadfast as the earth, it remains the foundation upon which we begin to build a lifetime of our shared dreams and successful future.
+        </p>
+
+        <div class="ornament-divider" aria-hidden="true">
+          <span>❀</span>
+        </div>
 
         <p class="supporting">
           With grateful hearts and the blessings of our families,
           we invite you to join us as we celebrate this special
           milestone and the beginning of our next chapter.
         </p>
+
       </div>
     </section>
 
-    <section class="countdown-section">
+    <section class="countdown-section" id="countdown-section">
       <div class="inner reveal">
-        <div class="section-label">
-          The countdown begins
-        </div>
 
-        <h2 style="font-weight:normal;font-size:32px;margin:0">
+        <div class="section-label">The countdown begins</div>
+
+        <h2 class="section-heading">
           Until our special evening
         </h2>
 
         <div class="countdown" aria-label="Countdown to the reception">
-          <div>
+          <div class="countdown-item">
             <strong id="days">--</strong>
             <span>Days</span>
           </div>
-          <div>
+          <div class="countdown-item">
             <strong id="hours">--</strong>
             <span>Hours</span>
           </div>
-          <div>
+          <div class="countdown-item">
             <strong id="minutes">--</strong>
             <span>Minutes</span>
           </div>
-          <div>
+          <div class="countdown-item">
             <strong id="seconds">--</strong>
             <span>Seconds</span>
           </div>
         </div>
 
-        <p id="countdownMessage"
-           style="color:#817681;font-size:13px;margin-top:26px">
+        <p class="countdown-message" id="countdownMessage">
           We look forward to celebrating with you.
         </p>
+
       </div>
     </section>
 
     <section class="details" id="details">
       <div class="inner reveal">
-        <div class="section-label">
-          Save the date
+
+        <div class="section-label">Save the date</div>
+
+        <h2 class="section-heading">
+          Join us for<br>our reception
+        </h2>
+
+        <div class="date">SATURDAY · 21 NOVEMBER 2026</div>
+        <div class="event-time">6:30 PM onwards</div>
+
+        <div class="ornament-divider" aria-hidden="true">
+          <span>✿</span>
         </div>
 
-        <h2>Join us for<br>our reception</h2>
+        <div class="section-label">The venue</div>
 
-        <div class="date">
-          SATURDAY · 21 NOVEMBER 2026
-        </div>
-
-        <div class="event-time">
-          6:30 PM onwards
-        </div>
-
-        <div class="rule"></div>
-
-        <div class="section-label">
-          The venue
-        </div>
+        <svg class="venue-flower" viewBox="0 0 60 60" aria-hidden="true">
+          <g transform="translate(30 30)">
+            <ellipse class="petal-blue" cy="-13" rx="8" ry="13"/>
+            <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
+            <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(120)"/>
+            <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(180)"/>
+            <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(240)"/>
+            <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(300)"/>
+            <circle class="flower-center" r="5"/>
+          </g>
+        </svg>
 
         <div class="venue">
           Avani Hall, Amudhasurabi
@@ -650,28 +1027,34 @@
         </div>
 
         <div class="actions">
-          <a class="primary"
-             id="mapLink"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="button primary"
+            id="mapLink"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Get directions ↗
           </a>
 
-          <a class="secondary"
-             id="calendarLink"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="button secondary"
+            id="calendarLink"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Add to calendar +
           </a>
         </div>
+
       </div>
     </section>
 
     <section class="closing">
       <div class="inner reveal">
-        <div class="eyebrow">
-          A new chapter awaits
-        </div>
+
+        <div class="eyebrow">A new chapter awaits</div>
 
         <h2>Be part of our story.</h2>
 
@@ -680,46 +1063,30 @@
           We cannot wait to share this beautiful evening with you.
         </p>
 
-        <p style="font-style:italic">
+        <div class="ornament-divider" aria-hidden="true">
+          <span>❀</span>
+        </div>
+
+        <p class="signature">
           With love,<br>
-          Geethika &amp; Subramanian
+          Geethika & Subramanian
         </p>
 
-        <div class="actions">
-          <a class="primary"
-             id="rsvpLink"
-             target="_blank"
-             rel="noopener noreferrer">
-            Respond to our invitation ↗
-          </a>
-        </div>
       </div>
     </section>
+
   </main>
 
   <footer>
-    MADE WITH LOVE · GEETHIKA &amp; SUBRAMANIAN · 2026
+    MADE WITH LOVE · GEETHIKA & SUBRAMANIAN · 2026
   </footer>
 
   <script>
-    /*
-      RSVP WhatsApp number.
-      Include the country code, without +, spaces or dashes.
-      Example for India: 919876543210
-    */
-    const RSVP_WHATSAPP_NUMBER = "918939118494";
-
-    // Reception date and time in Indian Standard Time.
     const eventDate = new Date("2026-11-21T18:30:00+05:30");
 
-    // Smooth scroll to the invitation details.
-    document.getElementById("openInvite").addEventListener("click", () => {
-      document.getElementById("story").scrollIntoView({
-        behavior: "smooth"
-      });
-    });
+    // Scroll to the invitation story when the guest scrolls down.
+    // The scroll cue is decorative, so the page remains simple and uncluttered.
 
-    // Live countdown.
     function updateCountdown() {
       const remaining = eventDate.getTime() - Date.now();
       const fields = ["days", "hours", "minutes", "seconds"];
@@ -731,7 +1098,6 @@
 
         document.getElementById("countdownMessage").textContent =
           "Today is the day we celebrate together!";
-
         return;
       }
 
@@ -751,21 +1117,19 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // Google Maps directions.
-    const venue =
-      "Avani Hall, Amudhasurabi, Unjavelampatti, Pollachi";
+    // Google Maps directions
+    const venue = "Avani Hall, Amudhasurabi, Unjavelampatti, Pollachi";
 
     document.getElementById("mapLink").href =
       "https://www.google.com/maps/search/?api=1&query=" +
       encodeURIComponent(venue);
 
-    // Google Calendar event.
+    // Google Calendar event
     const calendarDetails = new URLSearchParams({
       action: "TEMPLATE",
       text: "Wedding Reception — Geethika & Subramanian",
       dates: "20261121T130000Z/20261121T160000Z",
-      details:
-        "Join us to celebrate Geethika & Subramanian's wedding reception.",
+      details: "Join us to celebrate Geethika & Subramanian's wedding reception.",
       location: venue
     });
 
@@ -773,39 +1137,20 @@
       "https://calendar.google.com/calendar/render?" +
       calendarDetails.toString();
 
-    // WhatsApp RSVP.
-    document.getElementById("rsvpLink").addEventListener("click", event => {
-      if (!/^91\d{10}$/.test(RSVP_WHATSAPP_NUMBER)) {
-        event.preventDefault();
-
-        alert(
-          "Please add your WhatsApp number in the website code to enable RSVPs."
-        );
-
-        return;
-      }
-
-      const message =
-        "Hello! I would like to respond to the wedding reception invitation of " +
-        "Geethika & Subramanian on 21 November 2026. My response is: ";
-
-      event.currentTarget.href =
-        "https://wa.me/" + RSVP_WHATSAPP_NUMBER +
-        "?text=" + encodeURIComponent(message);
-    });
-
-    // Reveal sections as guests scroll.
+    // Reveal content as the guest scrolls.
     const revealElements = document.querySelectorAll(".reveal");
 
     if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver(entries => {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            revealObserver.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, {
+        threshold: 0.12
+      });
 
       revealElements.forEach(element => {
         revealObserver.observe(element);
@@ -817,5 +1162,6 @@
       });
     }
   </script>
+
 </body>
 </html>
