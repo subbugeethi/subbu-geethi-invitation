@@ -2,447 +2,820 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f6f1e7">
-<meta name="description" content="Celebrate the wedding reception of Geethika and Subramanian on 21 November 2026 in Pollachi.">
-<title>Geethika & Subramanian — A New Chapter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf5f3">
+  <meta name="description" content="Celebrate the wedding reception of Geethika and Subramanian on 21 November 2026 in Pollachi.">
 
-<style>
-:root {
-  --paper: #f6f1e7;
-  --ink: #293c42;
-  --muted: #6d7977;
-  --gold: #ae9166;
-  --line: #d9cdb8;
-  --white: #fffdf8;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-}
-button, a { -webkit-tap-highlight-color: transparent; }
-a { color: inherit; }
-button { font: inherit; }
-.hero {
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 32px 22px 48px;
-  overflow: hidden;
-  position: relative;
-  background:
-    radial-gradient(ellipse at 50% 76%, #d4dfda 0%, transparent 48%),
-    linear-gradient(#e9e9df 0%, #f6f1e7 57%, #d9e2dc 100%);
-}
-.eyebrow {
-  font: 10px/1.8 Arial, sans-serif;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-.hero h1 {
-  font-size: clamp(43px, 10vw, 76px);
-  font-weight: normal;
-  line-height: 1.12;
-  letter-spacing: -.045em;
-  margin: 24px 0 12px;
-}
-.ampersand {
-  color: var(--gold);
-  font-style: italic;
-}
-.subtitle {
-  font-size: 17px;
-  line-height: 1.8;
-  color: var(--muted);
-  max-width: 350px;
-}
-.horizon {
-  position: relative;
-  width: min(580px, 100%);
-  height: 112px;
-  margin: 28px auto 22px;
-  overflow: hidden;
-}
-.horizon::before {
-  content: "";
-  position: absolute;
-  top: 46px;
-  left: -10%;
-  width: 120%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #a6bdb7, #d2b995, transparent);
-}
-.wave {
-  position: absolute;
-  top: 43px;
-  left: -20%;
-  width: 140%;
-  height: 58px;
-  border-top: 1px solid #a7bbb5;
-  border-radius: 50%;
-  animation: drift 8s ease-in-out infinite alternate;
-}
-.wave.two {
-  top: 55px;
-  left: -15%;
-  border-color: #c2ad8c;
-  animation-delay: -3s;
-}
-@keyframes drift {
-  from { transform: translateX(-3%) rotate(-2deg); }
-  to { transform: translateX(3%) rotate(2deg); }
-}
-.primary, .secondary {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 48px;
-  padding: 13px 23px;
-  text-decoration: none;
-  border: 1px solid var(--ink);
-  cursor: pointer;
-  font: 10px Arial, sans-serif;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  transition: background .25s, color .25s;
-}
-.primary { background: var(--ink); color: white; }
-.primary:hover { background: #405a5f; }
-.secondary { border-color: var(--line); background: transparent; }
-.secondary:hover { background: var(--white); }
-section { padding: 82px 23px; }
-.inner { width: min(620px, 100%); margin: 0 auto; }
-.story { text-align: center; }
-.section-label {
-  text-align: center;
-  font: 10px Arial, sans-serif;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 25px;
-}
-.story h2, .details h2 {
-  font-size: clamp(30px, 7vw, 44px);
-  line-height: 1.25;
-  font-weight: normal;
-  margin: 0 0 28px;
-}
-.story p {
-  font-size: clamp(18px, 4.5vw, 22px);
-  line-height: 1.95;
-  font-style: italic;
-  margin: 0 auto 30px;
-  max-width: 570px;
-}
-.story .supporting {
-  font-size: 15px;
-  line-height: 1.9;
-  font-style: normal;
-  color: var(--muted);
-}
-.rule {
-  width: 58px;
-  height: 1px;
-  background: var(--gold);
-  margin: 38px auto;
-}
-.countdown-section {
-  background: #e8ede7;
-  text-align: center;
-}
-.countdown {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  max-width: 450px;
-  margin: 32px auto 0;
-}
-.countdown strong {
-  display: block;
-  font-size: clamp(27px, 7vw, 42px);
-  font-weight: normal;
-  font-variant-numeric: tabular-nums;
-}
-.countdown span {
-  font: 9px Arial, sans-serif;
-  letter-spacing: .14em;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-.details { text-align: center; }
-.date {
-  font: 11px/2 Arial, sans-serif;
-  letter-spacing: .18em;
-  color: var(--gold);
-}
-.venue {
-  font-size: 19px;
-  line-height: 1.9;
-  margin: 25px 0;
-}
-.venue small {
-  display: block;
-  font: 14px/1.9 Arial, sans-serif;
-  color: var(--muted);
-}
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 28px;
-}
-.closing {
-  background: #293c42;
-  color: var(--white);
-  text-align: center;
-  padding: 75px 22px;
-}
-.closing h2 {
-  font-size: clamp(32px, 8vw, 48px);
-  font-weight: normal;
-  margin: 18px 0;
-}
-.closing p {
-  color: #d4ddd7;
-  font-size: 16px;
-  line-height: 1.9;
-}
-.closing .eyebrow { color: #d2b995; }
-footer {
-  text-align: center;
-  background: #293c42;
-  color: #b8c4be;
-  padding: 0 20px 25px;
-  font: 10px Arial, sans-serif;
-  letter-spacing: .12em;
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .8s ease, transform .8s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
-  .reveal { opacity: 1; transform: none; }
-}
-</style>
+  <title>Geethika & Subramanian — A New Chapter</title>
+
+  <style>
+    :root {
+      --paper: #fbf5f3;
+      --ink: #514653;
+      --muted: #817681;
+      --rose: #bc929f;
+      --rose-light: #ead6dc;
+      --sage: #dce7df;
+      --lavender: #eee8f3;
+      --cream: #fffdfb;
+      --line: #e7d9dc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* Opening section */
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 48px 22px;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+      background:
+        radial-gradient(
+          ellipse at 15% 15%,
+          rgba(238, 232, 243, 0.9),
+          transparent 48%
+        ),
+        radial-gradient(
+          ellipse at 85% 80%,
+          rgba(220, 231, 223, 0.9),
+          transparent 45%
+        ),
+        linear-gradient(
+          145deg,
+          #fbf5f3 0%,
+          #fffaf7 50%,
+          #f7eff3 100%
+        );
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(188, 146, 159, 0.2);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero::before {
+      width: 340px;
+      height: 340px;
+      top: -190px;
+      right: -120px;
+      animation: float 9s ease-in-out infinite;
+    }
+
+    .hero::after {
+      width: 260px;
+      height: 260px;
+      bottom: -150px;
+      left: -100px;
+      animation: float 11s ease-in-out infinite reverse;
+    }
+
+    .hero-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .eyebrow {
+      font: 10px/1.9 Arial, sans-serif;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--rose);
+    }
+
+    .hero h1 {
+      font-size: clamp(43px, 10vw, 76px);
+      font-weight: normal;
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+      margin: 27px 0 18px;
+    }
+
+    .ampersand {
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 350px;
+    }
+
+    /* Delicate decorative lines */
+
+    .horizon {
+      position: relative;
+      width: min(420px, 85%);
+      height: 90px;
+      margin: 28px auto 25px;
+      overflow: hidden;
+    }
+
+    .horizon::before {
+      content: "";
+      position: absolute;
+      top: 42px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #d4b5bf,
+        #d8c8b0,
+        transparent
+      );
+    }
+
+    .wave {
+      position: absolute;
+      top: 37px;
+      left: -10%;
+      width: 120%;
+      height: 38px;
+      border-top: 1px solid #c9a8b4;
+      border-radius: 50%;
+      animation: drift 8s ease-in-out infinite alternate;
+    }
+
+    .wave.two {
+      top: 47px;
+      left: -15%;
+      border-color: #c5d5c9;
+      animation-delay: -3s;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateX(-2%) rotate(-1.5deg);
+      }
+      to {
+        transform: translateX(2%) rotate(1.5deg);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softPulse {
+      0%, 100% {
+        opacity: 0.65;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* Buttons */
+
+    .primary,
+    .secondary {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 14px 23px;
+      text-decoration: none;
+      border: 1px solid var(--rose);
+      border-radius: 2px;
+      cursor: pointer;
+      font: 10px Arial, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .primary {
+      background: var(--rose);
+      color: #fffdfb;
+    }
+
+    .primary:hover {
+      background: #a97f8d;
+      border-color: #a97f8d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(169, 127, 141, 0.18);
+    }
+
+    .secondary {
+      border-color: #d9c8ce;
+      background: rgba(255, 253, 251, 0.5);
+      color: var(--ink);
+    }
+
+    .secondary:hover {
+      background: var(--lavender);
+      transform: translateY(-2px);
+    }
+
+    /* General sections */
+
+    section {
+      padding: 82px 23px;
+    }
+
+    .inner {
+      width: min(620px, 100%);
+      margin: 0 auto;
+    }
+
+    .story {
+      text-align: center;
+      background: linear-gradient(
+        180deg,
+        #fbf5f3,
+        #fffaf8
+      );
+    }
+
+    .section-label {
+      text-align: center;
+      font: 10px Arial, sans-serif;
+      letter-spacing: 0.23em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 25px;
+    }
+
+    .story h2,
+    .details h2 {
+      font-size: clamp(30px, 7vw, 44px);
+      line-height: 1.3;
+      font-weight: normal;
+      margin: 0 0 28px;
+    }
+
+    .story p {
+      font-size: clamp(18px, 4.5vw, 21px);
+      line-height: 1.95;
+      font-style: italic;
+      margin: 0 auto 30px;
+      max-width: 570px;
+    }
+
+    .story .supporting {
+      font-size: 15px;
+      line-height: 1.95;
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .rule {
+      width: 58px;
+      height: 1px;
+      background: var(--rose);
+      margin: 38px auto;
+      animation: softPulse 4s ease-in-out infinite;
+    }
+
+    /* Countdown */
+
+    .countdown-section {
+      background: linear-gradient(
+        135deg,
+        #eee8f3 0%,
+        #f8edf0 55%,
+        #e6eee7 100%
+      );
+      text-align: center;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      max-width: 450px;
+      margin: 32px auto 0;
+    }
+
+    .countdown > div {
+      padding: 17px 4px;
+      background: rgba(255, 253, 251, 0.55);
+      border: 1px solid rgba(217, 200, 206, 0.55);
+      border-radius: 3px;
+      transition: transform 0.3s ease;
+    }
+
+    .countdown > div:hover {
+      transform: translateY(-3px);
+    }
+
+    .countdown strong {
+      display: block;
+      font-size: clamp(27px, 7vw, 42px);
+      font-weight: normal;
+      font-variant-numeric: tabular-nums;
+      color: #695765;
+    }
+
+    .countdown span {
+      display: block;
+      margin-top: 7px;
+      font: 9px Arial, sans-serif;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* Reception details */
+
+    .details {
+      text-align: center;
+      background: #fffaf8;
+    }
+
+    .date {
+      font: 11px/2 Arial, sans-serif;
+      letter-spacing: 0.16em;
+      color: var(--rose);
+    }
+
+    .event-time {
+      font-size: 25px;
+      margin-top: 12px;
+    }
+
+    .venue {
+      font-size: 19px;
+      line-height: 1.9;
+      margin: 25px 0;
+    }
+
+    .venue small {
+      display: block;
+      font: 14px/1.9 Arial, sans-serif;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    /* Closing section */
+
+    .closing {
+      background: linear-gradient(
+        145deg,
+        #e6eee7 0%,
+        #f2eaf2 52%,
+        #f7e9ed 100%
+      );
+      color: var(--ink);
+      text-align: center;
+      padding: 80px 22px;
+    }
+
+    .closing h2 {
+      font-size: clamp(32px, 8vw, 48px);
+      font-weight: normal;
+      margin: 18px 0;
+    }
+
+    .closing p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .closing .eyebrow {
+      color: var(--rose);
+    }
+
+    .closing .primary {
+      background: #fffdfb;
+      color: var(--ink);
+      border-color: #d9c8ce;
+    }
+
+    .closing .primary:hover {
+      background: #f5e7ec;
+    }
+
+    footer {
+      text-align: center;
+      background: #f7edf0;
+      color: #8d7c87;
+      padding: 22px 20px 28px;
+      font: 10px Arial, sans-serif;
+      letter-spacing: 0.12em;
+    }
+
+    /* Scroll reveal animations */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile refinements */
+
+    @media (max-width: 420px) {
+      section {
+        padding: 65px 19px;
+      }
+
+      .countdown {
+        gap: 5px;
+      }
+
+      .countdown > div {
+        padding: 14px 2px;
+      }
+
+      .countdown span {
+        font-size: 8px;
+        letter-spacing: 0.08em;
+      }
+
+      .primary,
+      .secondary {
+        padding: 13px 15px;
+        font-size: 9px;
+      }
+    }
+
+    /* Respect accessibility settings */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header class="hero" id="home">
-  <div class="eyebrow">A celebration of love & togetherness</div>
-  <h1>Geethika<br><span class="ampersand">&</span><br>Subramanian</h1>
-  <div class="subtitle">Two hearts. One horizon.<br>A beautiful new beginning.</div>
-
-  <div class="horizon" aria-hidden="true">
-    <div class="wave"></div>
-    <div class="wave two"></div>
-  </div>
-
-  <div class="eyebrow" style="margin-bottom:22px">
-    Saturday · 21 November 2026
-  </div>
-  <button class="primary" id="openInvite">Open our invitation ↓</button>
-</header>
-
-<main>
-  <section class="story" id="story">
-    <div class="inner reveal">
-      <div class="section-label">Our beginning</div>
-      <h2>Like the sea<br>meets the shore.</h2>
-
-      <p>
-        Like the endless embrace of the sea and the shore,
-        our hearts have found their forever.
-      </p>
-
-      <div class="rule"></div>
-
-      <p>
-        As boundless as the sky and as steadfast as the earth,
-        our love remains the foundation upon which we begin
-        building a lifetime of shared dreams and a successful
-        future together.
-      </p>
-
-      <p class="supporting">
-        With grateful hearts and the blessings of our families,
-        we invite you to join us as we celebrate this special
-        milestone and the beginning of our next chapter.
-      </p>
-    </div>
-  </section>
-
-  <section class="countdown-section">
-    <div class="inner reveal">
-      <div class="section-label">The countdown begins</div>
-      <h2 style="font-weight:normal;font-size:32px;margin:0">
-        Until our special evening
-      </h2>
-
-      <div class="countdown" aria-label="Countdown to the reception">
-        <div><strong id="days">--</strong><span>Days</span></div>
-        <div><strong id="hours">--</strong><span>Hours</span></div>
-        <div><strong id="minutes">--</strong><span>Minutes</span></div>
-        <div><strong id="seconds">--</strong><span>Seconds</span></div>
-      </div>
-      <p id="countdownMessage" style="color:#6d7977;font-size:13px;margin-top:26px">
-        We look forward to celebrating with you.
-      </p>
-    </div>
-  </section>
-
-  <section class="details" id="details">
-    <div class="inner reveal">
-      <div class="section-label">Save the date</div>
-      <h2>Join us for<br>our reception</h2>
-
-      <div class="date">SATURDAY · 21 NOVEMBER 2026</div>
-      <div style="font-size:25px;margin-top:12px">6:30 PM onwards</div>
-
-      <div class="rule"></div>
-
-      <div class="section-label">The venue</div>
-      <div class="venue">
-        Avani Hall, Amudhasurabi
-        <small>Unjavelampatti, Pollachi</small>
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">
+        A celebration of love &amp; togetherness
       </div>
 
-      <div class="actions">
-        <a class="primary" id="mapLink" target="_blank"
-           rel="noopener noreferrer">Get directions ↗</a>
-        <a class="secondary" id="calendarLink" target="_blank"
-           rel="noopener noreferrer">Add to calendar +</a>
+      <h1>
+        Geethika<br>
+        <span class="ampersand">&amp;</span><br>
+        Subramanian
+      </h1>
+
+      <div class="subtitle">
+        Two hearts. One horizon.<br>
+        A beautiful new beginning.
       </div>
-    </div>
-  </section>
 
-  <section class="closing">
-    <div class="inner reveal">
-      <div class="eyebrow">A new chapter awaits</div>
-      <h2>Be part of our story.</h2>
-      <p>
-        Your presence will make our celebration even more meaningful.
-        We cannot wait to share this beautiful evening with you.
-      </p>
-      <p style="font-style:italic">With love,<br>Geethika & Subramanian</p>
-      <div class="actions">
-        <a class="primary" id="rsvpLink" target="_blank"
-           rel="noopener noreferrer"
-           style="background:#f6f1e7;color:#293c42;border-color:#f6f1e7">
-          Respond to our invitation ↗
-        </a>
+      <div class="horizon" aria-hidden="true">
+        <div class="wave"></div>
+        <div class="wave two"></div>
       </div>
+
+      <div class="eyebrow" style="margin-bottom:22px">
+        Saturday · 21 November 2026
+      </div>
+
+      <button class="primary" id="openInvite">
+        Open our invitation ↓
+      </button>
     </div>
-  </section>
-</main>
+  </header>
 
-<footer>
-  MADE WITH LOVE · GEETHIKA & SUBRAMANIAN · 2026
-</footer>
+  <main>
+    <section class="story" id="story">
+      <div class="inner reveal">
+        <div class="section-label">
+          Our beginning
+        </div>
 
-<script>
-/* CUSTOMIZE THIS NUMBER WITH YOUR RSVP WHATSAPP NUMBER.
-   Include country code; do not include +, spaces or dashes.
-   Example format for India: 919876543210
-*/
-const RSVP_WHATSAPP_NUMBER = "918939118494";
+        <h2>A new chapter,<br>together.</h2>
 
-const eventDate = new Date("2026-11-21T18:30:00+05:30");
+        <p>
+          As boundless as the sky and as steadfast as the earth,
+          our love remains the foundation upon which we begin
+          building a lifetime of shared dreams and a beautiful
+          future together.
+        </p>
 
-document.getElementById("openInvite").addEventListener("click", () => {
-  document.getElementById("story").scrollIntoView({ behavior: "smooth" });
-});
+        <div class="rule"></div>
 
-function updateCountdown() {
-  const remaining = eventDate.getTime() - Date.now();
-  const fields = ["days", "hours", "minutes", "seconds"];
+        <p class="supporting">
+          With grateful hearts and the blessings of our families,
+          we invite you to join us as we celebrate this special
+          milestone and the beginning of our next chapter.
+        </p>
+      </div>
+    </section>
 
-  if (remaining <= 0) {
-    fields.forEach(id => document.getElementById(id).textContent = "00");
-    document.getElementById("countdownMessage").textContent =
-      "Today is the day we celebrate together!";
-    return;
-  }
+    <section class="countdown-section">
+      <div class="inner reveal">
+        <div class="section-label">
+          The countdown begins
+        </div>
 
-  const values = [
-    Math.floor(remaining / 86400000),
-    Math.floor((remaining % 86400000) / 3600000),
-    Math.floor((remaining % 3600000) / 60000),
-    Math.floor((remaining % 60000) / 1000)
-  ];
+        <h2 style="font-weight:normal;font-size:32px;margin:0">
+          Until our special evening
+        </h2>
 
-  fields.forEach((id, index) => {
-    document.getElementById(id).textContent =
-      String(values[index]).padStart(2, "0");
-  });
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
+        <div class="countdown" aria-label="Countdown to the reception">
+          <div>
+            <strong id="days">--</strong>
+            <span>Days</span>
+          </div>
+          <div>
+            <strong id="hours">--</strong>
+            <span>Hours</span>
+          </div>
+          <div>
+            <strong id="minutes">--</strong>
+            <span>Minutes</span>
+          </div>
+          <div>
+            <strong id="seconds">--</strong>
+            <span>Seconds</span>
+          </div>
+        </div>
 
-const venue =
-  "Avani Hall, Amudhasurabi, Unjavelampatti, Pollachi";
+        <p id="countdownMessage"
+           style="color:#817681;font-size:13px;margin-top:26px">
+          We look forward to celebrating with you.
+        </p>
+      </div>
+    </section>
 
-document.getElementById("mapLink").href =
-  "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent(venue);
+    <section class="details" id="details">
+      <div class="inner reveal">
+        <div class="section-label">
+          Save the date
+        </div>
 
-const calendarDetails = new URLSearchParams({
-  action: "TEMPLATE",
-  text: "Wedding Reception — Geethika & Subramanian",
-  dates: "20261121T130000Z/20261121T160000Z",
-  details: "Join us to celebrate Geethika & Subramanian's wedding reception.",
-  location: venue
-});
-document.getElementById("calendarLink").href =
-  "https://calendar.google.com/calendar/render?" + calendarDetails.toString();
+        <h2>Join us for<br>our reception</h2>
 
-document.getElementById("rsvpLink").addEventListener("click", event => {
-  if (!/^91\d{10}$/.test(RSVP_WHATSAPP_NUMBER)) {
-    event.preventDefault();
-    alert("Please add your WhatsApp number in the website code to enable RSVPs.");
-    return;
-  }
+        <div class="date">
+          SATURDAY · 21 NOVEMBER 2026
+        </div>
 
-  const message =
-    "Hello! I would like to respond to the wedding reception invitation of " +
-    "Geethika & Subramanian on 21 November 2026. My response is: ";
-  event.currentTarget.href =
-    "https://wa.me/" + RSVP_WHATSAPP_NUMBER +
-    "?text=" + encodeURIComponent(message);
-});
+        <div class="event-time">
+          6:30 PM onwards
+        </div>
 
-/* Reveal sections as guests scroll. */
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      revealObserver.unobserve(entry.target);
+        <div class="rule"></div>
+
+        <div class="section-label">
+          The venue
+        </div>
+
+        <div class="venue">
+          Avani Hall, Amudhasurabi
+          <small>Unjavelampatti, Pollachi</small>
+        </div>
+
+        <div class="actions">
+          <a class="primary"
+             id="mapLink"
+             target="_blank"
+             rel="noopener noreferrer">
+            Get directions ↗
+          </a>
+
+          <a class="secondary"
+             id="calendarLink"
+             target="_blank"
+             rel="noopener noreferrer">
+            Add to calendar +
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="inner reveal">
+        <div class="eyebrow">
+          A new chapter awaits
+        </div>
+
+        <h2>Be part of our story.</h2>
+
+        <p>
+          Your presence will make our celebration even more meaningful.
+          We cannot wait to share this beautiful evening with you.
+        </p>
+
+        <p style="font-style:italic">
+          With love,<br>
+          Geethika &amp; Subramanian
+        </p>
+
+        <div class="actions">
+          <a class="primary"
+             id="rsvpLink"
+             target="_blank"
+             rel="noopener noreferrer">
+            Respond to our invitation ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    MADE WITH LOVE · GEETHIKA &amp; SUBRAMANIAN · 2026
+  </footer>
+
+  <script>
+    /*
+      RSVP WhatsApp number.
+      Include the country code, without +, spaces or dashes.
+      Example for India: 919876543210
+    */
+    const RSVP_WHATSAPP_NUMBER = "918939118494";
+
+    // Reception date and time in Indian Standard Time.
+    const eventDate = new Date("2026-11-21T18:30:00+05:30");
+
+    // Smooth scroll to the invitation details.
+    document.getElementById("openInvite").addEventListener("click", () => {
+      document.getElementById("story").scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+
+    // Live countdown.
+    function updateCountdown() {
+      const remaining = eventDate.getTime() - Date.now();
+      const fields = ["days", "hours", "minutes", "seconds"];
+
+      if (remaining <= 0) {
+        fields.forEach(id => {
+          document.getElementById(id).textContent = "00";
+        });
+
+        document.getElementById("countdownMessage").textContent =
+          "Today is the day we celebrate together!";
+
+        return;
+      }
+
+      const values = [
+        Math.floor(remaining / 86400000),
+        Math.floor((remaining % 86400000) / 3600000),
+        Math.floor((remaining % 3600000) / 60000),
+        Math.floor((remaining % 60000) / 1000)
+      ];
+
+      fields.forEach((id, index) => {
+        document.getElementById(id).textContent =
+          String(values[index]).padStart(2, "0");
+      });
     }
-  });
-}, { threshold: 0.12 });
 
-document.querySelectorAll(".reveal").forEach(element => {
-  revealObserver.observe(element);
-});
-</script>
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Google Maps directions.
+    const venue =
+      "Avani Hall, Amudhasurabi, Unjavelampatti, Pollachi";
+
+    document.getElementById("mapLink").href =
+      "https://www.google.com/maps/search/?api=1&query=" +
+      encodeURIComponent(venue);
+
+    // Google Calendar event.
+    const calendarDetails = new URLSearchParams({
+      action: "TEMPLATE",
+      text: "Wedding Reception — Geethika & Subramanian",
+      dates: "20261121T130000Z/20261121T160000Z",
+      details:
+        "Join us to celebrate Geethika & Subramanian's wedding reception.",
+      location: venue
+    });
+
+    document.getElementById("calendarLink").href =
+      "https://calendar.google.com/calendar/render?" +
+      calendarDetails.toString();
+
+    // WhatsApp RSVP.
+    document.getElementById("rsvpLink").addEventListener("click", event => {
+      if (!/^91\d{10}$/.test(RSVP_WHATSAPP_NUMBER)) {
+        event.preventDefault();
+
+        alert(
+          "Please add your WhatsApp number in the website code to enable RSVPs."
+        );
+
+        return;
+      }
+
+      const message =
+        "Hello! I would like to respond to the wedding reception invitation of " +
+        "Geethika & Subramanian on 21 November 2026. My response is: ";
+
+      event.currentTarget.href =
+        "https://wa.me/" + RSVP_WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+    });
+
+    // Reveal sections as guests scroll.
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach(element => {
+        revealObserver.observe(element);
+      });
+    } else {
+      // Fallback for older browsers.
+      revealElements.forEach(element => {
+        element.classList.add("visible");
+      });
+    }
+  </script>
 </body>
 </html>
