@@ -50,10 +50,6 @@
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-    }
-
     a,
     button {
       -webkit-tap-highlight-color: transparent;
@@ -77,7 +73,7 @@
       justify-content: center;
       isolation: isolate;
       overflow: hidden;
-      padding: 100px 28px 110px;
+      padding: 80px 28px 55px;
       text-align: center;
       background:
         radial-gradient(
@@ -131,7 +127,7 @@
       width: min(720px, 100%);
       position: relative;
       z-index: 2;
-      padding-bottom: 26px;
+      padding-bottom: 0;
       animation: heroEnter 1.2s cubic-bezier(.2, .7, .2, 1) both;
     }
 
@@ -179,39 +175,38 @@
     }
 
     .hero-date {
-      margin-top: 23px;
+      margin-top: 17px;
       color: var(--green-deep);
       animation: fadeIn 1.1s .9s both;
     }
 
     .hero-flower {
       display: block;
-      width: 46px;
-      height: 46px;
-      margin: 25px auto 0;
+      width: 40px;
+      height: 40px;
+      margin: 16px auto 0;
       animation: flowerFloat 5s ease-in-out 1.4s infinite;
     }
 
     /* =========================
-       SVG FLORAL DECORATIONS
+       FLORAL CORNER DECORATIONS
     ========================= */
 
     .floral {
       position: absolute;
-      width: clamp(120px, 23vw, 230px);
+      width: clamp(90px, 14vw, 145px);
       height: auto;
       z-index: 1;
       pointer-events: none;
       overflow: visible;
+      opacity: .88;
     }
 
     .floral-top-left {
       top: 0;
       left: 0;
       transform-origin: top left;
-      animation:
-        floralAppear 1.3s .2s both,
-        gentleSway 7s 1.6s ease-in-out infinite;
+      animation: floralAppear 1.3s .2s both;
     }
 
     .floral-top-right {
@@ -219,9 +214,7 @@
       right: 0;
       transform: scaleX(-1);
       transform-origin: top right;
-      animation:
-        floralAppear 1.3s .35s both,
-        gentleSway 8s 1.7s ease-in-out infinite;
+      animation: floralAppear 1.3s .35s both;
     }
 
     .floral-bottom-left {
@@ -229,9 +222,7 @@
       left: 0;
       transform: scaleY(-1);
       transform-origin: bottom left;
-      animation:
-        floralAppear 1.4s .4s both,
-        gentleSway 8s 1.5s ease-in-out infinite;
+      animation: floralAppear 1.4s .4s both;
     }
 
     .floral-bottom-right {
@@ -239,9 +230,7 @@
       right: 0;
       transform: scale(-1);
       transform-origin: bottom right;
-      animation:
-        floralAppear 1.4s .3s both,
-        gentleSway 7s 1.6s ease-in-out infinite;
+      animation: floralAppear 1.4s .3s both;
     }
 
     .flower-stem {
@@ -285,14 +274,15 @@
     ========================= */
 
     .scroll-cue {
-      position: absolute;
-      bottom: 27px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
+      bottom: auto;
+      left: auto;
+      transform: none;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5px;
+      gap: 3px;
+      margin-top: 12px;
       color: var(--muted);
       font: 9px/1.5 var(--sans);
       letter-spacing: .16em;
@@ -617,7 +607,7 @@
     }
 
     /* =========================
-       SHORT, ELEGANT CLOSING
+       CLOSING
     ========================= */
 
     .closing {
@@ -705,16 +695,8 @@
       transform: translateY(0);
     }
 
-    .reveal-delay-1 {
-      transition-delay: .12s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: .24s;
-    }
-
     /* =========================
-       ANIMATION KEYFRAMES
+       ANIMATIONS
     ========================= */
 
     @keyframes heroEnter {
@@ -746,12 +728,7 @@
 
     @keyframes floralAppear {
       from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes gentleSway {
-      0%, 100% { margin-top: 0; }
-      50% { margin-top: 5px; }
+      to { opacity: .88; }
     }
 
     @keyframes flowerFloat {
@@ -759,7 +736,7 @@
         transform: translateY(0) rotate(-3deg);
       }
       50% {
-        transform: translateY(-6px) rotate(3deg);
+        transform: translateY(-5px) rotate(3deg);
       }
     }
 
@@ -790,7 +767,7 @@
 
     @media (max-width: 600px) {
       .hero {
-        padding: 100px 23px 100px;
+        padding: 75px 23px 45px;
       }
 
       .hero::before {
@@ -799,21 +776,35 @@
       }
 
       .hero-content {
-        padding-bottom: 20px;
+        padding-bottom: 0;
       }
 
       .hero h1 {
         font-size: clamp(49px, 11vw, 70px);
         margin-top: 28px;
+        margin-bottom: 20px;
+      }
+
+      .subtitle {
+        margin-top: 23px;
+      }
+
+      .hero-date {
+        margin-top: 14px;
+      }
+
+      .hero-flower {
+        margin-top: 13px;
+        width: 36px;
+        height: 36px;
       }
 
       .floral {
-        width: clamp(112px, 30vw, 155px);
+        width: clamp(82px, 25vw, 120px);
       }
 
       .scroll-cue {
-        bottom: 20px;
-        gap: 3px;
+        margin-top: 12px;
         font-size: 8px;
       }
 
@@ -861,8 +852,8 @@
     @media (max-height: 680px) and (min-width: 601px) {
       .hero {
         min-height: 720px;
-        padding-top: 80px;
-        padding-bottom: 95px;
+        padding-top: 65px;
+        padding-bottom: 45px;
       }
 
       .hero h1 {
@@ -876,11 +867,11 @@
       }
 
       .hero-flower {
-        margin-top: 17px;
+        margin-top: 12px;
       }
 
       .hero-date {
-        margin-top: 15px;
+        margin-top: 12px;
       }
     }
 
@@ -904,12 +895,12 @@
 <body>
 
   <!-- =========================
-       HERO
+       HERO / OPENING
   ========================= -->
 
   <header class="hero" id="home">
 
-    <!-- Upper-left botanical arrangement -->
+    <!-- Top-left pink botanical arrangement -->
     <svg class="floral floral-top-left"
          viewBox="0 0 220 250"
          aria-hidden="true">
@@ -958,7 +949,7 @@
       </g>
     </svg>
 
-    <!-- Upper-right botanical arrangement -->
+    <!-- Top-right botanical arrangement -->
     <svg class="floral floral-top-right"
          viewBox="0 0 220 250"
          aria-hidden="true">
@@ -1044,7 +1035,7 @@
       <span>⌄</span>
     </div>
 
-    <!-- Lower-left flowers -->
+    <!-- Bottom-left floral arrangement -->
     <svg class="floral floral-bottom-left"
          viewBox="0 0 220 250"
          aria-hidden="true">
@@ -1053,12 +1044,14 @@
         <path d="M22 160 C5 126 13 103 32 88"/>
         <path d="M47 127 C78 131 91 113 98 92"/>
       </g>
+
       <path class="leaf"
             d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
       <path class="leaf"
             d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
       <path class="leaf"
             d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+
       <g transform="translate(96 42)">
         <ellipse class="petal-blue" cy="-13" rx="8" ry="13"/>
         <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
@@ -1070,7 +1063,7 @@
       </g>
     </svg>
 
-    <!-- Lower-right flowers -->
+    <!-- Bottom-right floral arrangement -->
     <svg class="floral floral-bottom-right"
          viewBox="0 0 220 250"
          aria-hidden="true">
@@ -1079,12 +1072,14 @@
         <path d="M22 160 C5 126 13 103 32 88"/>
         <path d="M47 127 C78 131 91 113 98 92"/>
       </g>
+
       <path class="leaf"
             d="M20 153 C-2 147 -8 127 0 116 C20 122 30 137 20 153Z"/>
       <path class="leaf"
             d="M31 111 C32 88 48 78 61 81 C59 101 47 112 31 111Z"/>
       <path class="leaf"
             d="M61 110 C71 89 91 88 101 98 C88 115 73 119 61 110Z"/>
+
       <g transform="translate(96 42)">
         <ellipse class="petal-blue" cy="-13" rx="8" ry="13"/>
         <ellipse class="petal-blue" cy="-13" rx="8" ry="13" transform="rotate(60)"/>
@@ -1100,9 +1095,7 @@
 
   <main>
 
-    <!-- =========================
-         OUR STORY
-    ========================= -->
+    <!-- OUR STORY -->
 
     <section class="story" id="story">
       <div class="inner reveal">
@@ -1128,9 +1121,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         COUNTDOWN
-    ========================= -->
+    <!-- COUNTDOWN -->
 
     <section class="countdown-section" id="countdown-section">
       <div class="inner reveal">
@@ -1173,9 +1164,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         RECEPTION DETAILS
-    ========================= -->
+    <!-- RECEPTION DETAILS -->
 
     <section class="details" id="details">
       <div class="inner reveal">
@@ -1244,9 +1233,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         CLOSING
-    ========================= -->
+    <!-- CLOSING -->
 
     <section class="closing">
       <div class="inner reveal">
@@ -1286,7 +1273,7 @@
     // Reception date and time in India Standard Time.
     const eventDate = new Date("2026-11-21T18:30:00+05:30");
 
-    // Countdown
+    // Update the countdown every second.
     function updateCountdown() {
       const remaining = eventDate.getTime() - Date.now();
 
@@ -1324,7 +1311,7 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // Google Maps directions
+    // Google Maps directions.
     const venue =
       "Avani Hall, Amudhasurabi, Unjavelampatti, Pollachi";
 
@@ -1332,7 +1319,7 @@
       "https://www.google.com/maps/search/?api=1&query=" +
       encodeURIComponent(venue);
 
-    // Google Calendar event
+    // Google Calendar event.
     const calendarDetails = new URLSearchParams({
       action: "TEMPLATE",
       text: "Wedding Reception — Geethika & Subramanian",
@@ -1345,7 +1332,7 @@
       "https://calendar.google.com/calendar/render?" +
       calendarDetails.toString();
 
-    // Reveal sections smoothly as they enter the viewport.
+    // Reveal sections as they enter the viewport.
     const revealElements = document.querySelectorAll(".reveal");
 
     if ("IntersectionObserver" in window) {
@@ -1367,7 +1354,6 @@
         revealObserver.observe(element);
       });
     } else {
-      // Fallback for older browsers.
       revealElements.forEach(element => {
         element.classList.add("visible");
       });
